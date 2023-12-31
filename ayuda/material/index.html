@@ -9,54 +9,62 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Material Design - Rupertobot</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="../..">Rupertobot</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Rupertobot</a>
+                </div>
 
                 <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">Introducción</a>
+                            <li >
+                                <a href="../..">Introducción</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../../about/" class="nav-link">Autor / Autores</a>
+                            <li >
+                                <a href="../../about/">Autor / Autores</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="../../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
+<li >
+    <a href="../../cad/archivosCAD/">Archivos en FreeCAD (modificables)</a>
 </li>
                                     
-<li>
-    <a href="../../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
+<li >
+    <a href="../../STL/archivosSTL/">Archivos STL (para imprimir en 3D)</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -66,46 +74,17 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#material-design" class="nav-link">Material Design</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#enlaces" class="nav-link">Enlaces</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#imagenes" class="nav-link">Imagenes</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#secuencias-de-escape" class="nav-link">Secuencias de escape</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#codigo" class="nav-link">Código</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#extensiones" class="nav-link">Extensiones</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#material-design">Material Design</a></li>
+            <li><a href="#enlaces">Enlaces</a></li>
+            <li><a href="#imagenes">Imagenes</a></li>
+            <li><a href="#secuencias-de-escape">Secuencias de escape</a></li>
+            <li><a href="#codigo">Código</a></li>
+            <li><a href="#extensiones">Extensiones</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="material-design">Material Design</h1>
 <p>Esta chuleta es un copia-pega modificado de <a href="http://cuartas.es/c/markdown/">esta página</a>. Básicamente es un Markdown específico para poder ser usado con el tema Material Design y sacarle más partido.</p>
@@ -146,25 +125,28 @@ _ underscore
 <h2 id="extensiones">Extensiones</h2>
 <h3 id="admonition">Admonition</h3>
 <p>Extensión incluida en la librería estándar de Markdown que permite incluir contenido adicional en cajas de color con un título y un icono. Por ejemplo para resúmenes, notas, consejos o avisos.</p>
-<pre><code class="language-markdown">!!! note
+<pre><code class="markdown">!!! note
     Esto es un ejemplo de nota (note, seealso).
 </code></pre>
+
 <p>!!! note
     Esto es un ejemplo de nota (note, seealso).</p>
-<pre><code class="language-markdown">!!! note &quot;Esta es una nota con título&quot;
+<pre><code class="markdown">!!! note &quot;Esta es una nota con título&quot;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Nulla et euismod nulla. Curabitur feugiat, tortor non
     consequat finibus, justo purus auctor massa, nec semper
     lorem quam in massa.
 </code></pre>
+
 <p>!!! note "Esta es una nota con título"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Nulla et euismod nulla. Curabitur feugiat, tortor non
     consequat finibus, justo purus auctor massa, nec semper
     lorem quam in massa.</p>
-<pre><code class="language-markdown">!!! note &quot;&quot;
+<pre><code class="markdown">!!! note &quot;&quot;
     Esta nota va sin título.
 </code></pre>
+
 <p>!!! note ""
     Esta nota va sin título.</p>
 <p>En vez de note es posible utilizar las siguientes etiquetas: summary, info, tip, success, question, warning, failure, danger, bug y quote.</p>
@@ -191,27 +173,30 @@ _ underscore
 <h3 id="details">Details</h3>
 <p>Para crear bloques colapsables que puedan ocultar su contenido.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">??? &quot;Bloque cerrado. Abreme !!!&quot;
+<pre><code class="markdown">??? &quot;Bloque cerrado. Abreme !!!&quot;
     Ahora lo has abierto.
 </code></pre>
+
 <p>Resultado:
 ??? "Bloque cerrado. Abreme !!!"
     Ahora lo has abierto.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">???+ &quot;Bloque abierto inicialmente&quot;
+<pre><code class="markdown">???+ &quot;Bloque abierto inicialmente&quot;
 
     ??? &quot;Bloque dentro de otro bloque&quot;
         Algo de contenido.
 </code></pre>
+
 <p>Resultado:
 ???+ "Bloque abierto inicialmente"</p>
 <pre><code>??? "Bloque dentro de otro bloque"
     Algo de contenido.
 </code></pre>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">??? danger &quot;Bloque con tema de peligro&quot;
+<pre><code class="markdown">??? danger &quot;Bloque con tema de peligro&quot;
     Algo de contenido.
 </code></pre>
+
 <p>Resultado:
 ??? danger "Bloque con tema de peligro"
     Algo de contenido.</p>
@@ -222,15 +207,17 @@ _ underscore
 <h3 id="codehilite">CodeHilite</h3>
 <p>Extensión incluida en la librería estándar de Markdown que permite resaltar la sintaxis de los bloques de código. Como lenguajes soportados están entre otros: markdown, python, c, cpp, csharp, html, javascript, JSON, XML.</p>
 <p>Ejemplo utilizando comillas simples.</p>
-<pre><code class="language-markdown">``` python
+<pre><code class="markdown">``` python
 import tensorflow as tf
 ```
 </code></pre>
+
 <p>Resultado:</p>
-<pre><code class="language-python">import tensorflow as tf
+<pre><code class="python">import tensorflow as tf
 </code></pre>
+
 <p>Ejemplo utilizando bloque tabulado con cuatro espacios:</p>
-<pre><code class="language-markdown">    :::python
+<pre><code class="markdown">    :::python
     &quot;&quot;&quot; Bubble sort &quot;&quot;&quot;
     def bubble_sort(items):
         for i in range(len(items)):
@@ -238,6 +225,7 @@ import tensorflow as tf
                 if items[j] &gt; items[j + 1]:
                     items[j], items[j + 1] = items[j + 1], items[j]
 </code></pre>
+
 <p>Resultado:</p>
 <pre><code>:::python
 """ Bubble sort """
@@ -248,7 +236,7 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 </code></pre>
 <p>Ejemplo utilizando bloque tabulado y números de línea:</p>
-<pre><code class="language-markdown">    #!python
+<pre><code class="markdown">    #!python
     &quot;&quot;&quot; Bubble sort &quot;&quot;&quot;
     def bubble_sort(items):
         for i in range(len(items)):
@@ -256,6 +244,7 @@ def bubble_sort(items):
                 if items[j] &gt; items[j + 1]:
                     items[j], items[j + 1] = items[j + 1], items[j]
 </code></pre>
+
 <p>Resultado:</p>
 <pre><code>#!python
 """ Bubble sort """
@@ -266,8 +255,9 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 </code></pre>
 <p>Es posible resaltar líneas concretas de código con hl_lines.</p>
-<pre><code class="language-markdown">    #!python hl_lines=&quot;3 4&quot;
+<pre><code class="markdown">    #!python hl_lines=&quot;3 4&quot;
 </code></pre>
+
 <p>Resultado:</p>
 <pre><code>#!python hl_lines="3 4"
 """ Bubble sort """
@@ -280,59 +270,68 @@ def bubble_sort(items):
 <h3 id="inlinehilite">InlineHilite</h3>
 <p>Permite embeber código en el texto mediante <code>#!languaje code</code> o bien <code>:::languaje code</code> entre comillas simples inversas.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">Aqui se presenta este código `#!c #include &lt;stdio.h&gt;` embebido en el texto.
+<pre><code class="markdown">Aqui se presenta este código `#!c #include &lt;stdio.h&gt;` embebido en el texto.
 </code></pre>
+
 <p>Resultado:</p>
 <p>Aqui se presenta este código <code>#!c #include &lt;stdio.h&gt;</code> embebido en el texto.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">Aqui se presenta este otro código `:::c #include &lt;stdlib.h&gt;` embebido en el texto.
+<pre><code class="markdown">Aqui se presenta este otro código `:::c #include &lt;stdlib.h&gt;` embebido en el texto.
 </code></pre>
+
 <p>Resultado:</p>
 <p>Aqui se presenta este otro código <code>:::c #include &lt;stdlib.h&gt;</code> embebido en el texto.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">Código javascript: `#!js function pad(v){return ('0'+v).split('').reverse().splice(0,2).reverse().join('')}`.
+<pre><code class="markdown">Código javascript: `#!js function pad(v){return ('0'+v).split('').reverse().splice(0,2).reverse().join('')}`.
 </code></pre>
+
 <p>Resultado:</p>
 <p>Código javascript: <code>#!js function pad(v){return ('0'+v).split('').reverse().splice(0,2).reverse().join('')}</code>.</p>
 <h3 id="mark">Mark</h3>
 <p>Permite marcar texto en ==amarillo fosforito==.</p>
 <p>La anterior frase se ha generado así:</p>
-<pre><code class="language-markdown">Permite marcar texto en ==amarillo fosforito==.
+<pre><code class="markdown">Permite marcar texto en ==amarillo fosforito==.
 </code></pre>
+
 <h3 id="footnotes">Footnotes</h3>
 <p>Otra extensión de la libreria estándar para incluir notas al pie de página. Se inserta una referencia en el texto, la cual puede ser definida en cualquier parte del documento. La definición aparecerá en el pie de página. La referencia consiste en un sombrerete seguido de un identificador numérico [1, 2, 3, ...] o bien de nombres [Cuartas et al. 2012].</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
+<pre><code class="markdown">Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
 </code></pre>
+
 <p>Resultado:</p>
-<p>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]</p>
+<p>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.<a href="">^2</a></p>
 <p>La definición de los contenidos de la nota al pie puede realizarse en una única línea si el texto es corto:</p>
-<pre><code class="language-markdown">[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<pre><code class="markdown">[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </code></pre>
+
 <p>o bien en un bloque de texto indentado cuatro espacios, que comienze en la siguiente línea de la etiqueta, si el texto es largo.</p>
-<pre><code class="language-markdown">[^2]:
+<pre><code class="markdown">[^2]:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 </code></pre>
+
 <p>[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p>[^2]:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.</p>
+<pre><code>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.
+</code></pre>
 <h3 id="arithmatex-mathjax">Arithmatex <small>MathJax</small></h3>
 <p>Basado en <a href="https://www.mathjax.org/">MathJax</a>. Permite introducir equaciones escritas en TeX dentro de bloques o en línea con el texto. Ver <a href="http://meta.math.stackexchange.com/questions/5020/">este hilo</a> para una rápida referencia sobre la sintaxis TeX.</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
+<pre><code class="markdown">$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 </code></pre>
+
 <p>Resultado:</p>
 <p>$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$</p>
 <p>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</p>
 <p>Ejemplo:</p>
-<pre><code class="language-markdown">Lorem ipsum dolor sit amet: $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+<pre><code class="markdown">Lorem ipsum dolor sit amet: $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
 </code></pre>
+
 <p>Resultado:</p>
 <p>Lorem ipsum dolor sit amet: $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$</p>
 <h4 id="letras-griegas">Letras griegas</h4>
@@ -353,7 +352,6 @@ símbolo o un cualquier fórmula ubicada entre llaves {...}</p>
 <p>$10^{10}$</p>
 <p><code>:::markdown ${x^y}^z$</code></p>
 <p>${x^y}^z$</p></div>
-            </div>
         </div>
 
         <footer class="col-md-12">
@@ -367,32 +365,35 @@ símbolo o un cualquier fórmula ubicada entre llaves {...}</p>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
                     <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
