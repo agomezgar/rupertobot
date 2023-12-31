@@ -88,7 +88,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#holis" class="nav-link">holis</a>
+            <li class="nav-item" data-level="1"><a href="#rupertobot" class="nav-link">Rupertobot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sensores-y-actuadores" class="nav-link">Sensores y actuadores</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#programacion" class="nav-link">Programación</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -97,7 +107,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="holis">holis</h1></div>
+<h1 id="rupertobot">Rupertobot</h1>
+<p>Rupertobot es mi nuevo diseño para lograr un robot educativo, impreso en 3D, fácil de montar en cualquier Aula-Taller de Tecnología. Lo estoy diseñando para que sea modular, simple de programar. Rupertobot no es un robot velocista como <a href="https://clubroboticagranada.github.io/MASAYLO-CRG">Masaylo</a>, pero a cambio tiene un control sobre su movimiento muchísimo mayor que su primo. Además, tiene bastante mejor localizado su centro de masas, lo que permite añadirle un bolígrafo o un lapiz para que realice dibujos basados en algoritmos geométricos (vale, esto último es aún MUY MEJORABLE, pero prometo que podrá hacerlo).<br />
+<img alt="" src="../img/rupertobotGeneral.jpg" /></p>
+<h1 id="sensores-y-actuadores">Sensores y actuadores</h1>
+<p>Como he dicho antes, Rupertobot intenta ser un robot modular para facilitar al máximo su montaje por parte de los no iniciados. Puede funcionar sin sensor ni actuador alguno, aparte de los típicos stepper 28BYJ-48, que tantas alegrías nos han dado con Arduino, y que en España tienen su máximo exponente en su uso con el <a href="https://escornabot.com/es/index">Escornabot</a>. Estos motores, conocidos también como motores paso a paso, se caracterizan por ir rotando fracciones de grado si se excitan sus cuatro bobinas en el orden adecuado.  </p>
+<p><img alt="" src="../img/stepper.png" /><br />
+En un principio, Si montas el Rupertobot sólo con estos dos motores, podrás programarlo para que avance y gire en cualquier sentido, con una precisión milimétrica (bueno... más o menos... que es un robot de los baratitos, no nos flipemos).<br />
+No obstante, a medida que ganes confianza, podrás dotar a tu Rupertobot de un sensor de distancia HC-SR04. Ello le permitirá detectar obstáculos y esquivarlos (o embestirlos.. todo depende de tí).<br />
+<img alt="" src="../img/HCRSR04.png" /><br />
+También puedes completar el conjunto con dos sensores de infrarrojos modelo FC-51, que pueden usarse, a su vez, como sensores de distancia (con mucho menos alcance que el HCSR04), pero que a nosotros nos vendrá mucho mejor utilizar como discriminadores blanco-negro, para poder programar al Rupertobot como siguelíneas o resuelvelaberintos.<br />
+<img alt="" src="../img/sensor-IR.png" /><br />
+De hecho, aquí tienes un detalle de cómo irían montados un tipo de estos sensores, o los dos, dentro del Rupertobot. Si no los vas a usar, no necesitas imprimir la pieza de soporte de sensores.<br />
+<img alt="" src="../img/montajeSensores.png" /><br />
+Para finalizar, si así lo deseas (y no te importa el ruido infernal que puede montarse en un momento), también puedes montar un pequeño zumbador para dotar al Rupertobot con la posibilidad de emitir sonidos. No me importa reconocer que esta pieza no es mía, es obra de <a href="https://github.com/fgcoca">Federico Coca</a>, y me he tomado la libertad de importarla desde la <a href="https://clubroboticagranada.github.io/MASAYLO-CRG">página del Escornabot</a>.<br />
+Aquí te dejo un detalle de cómo quedaría instalado el zumbador dentro de la plataforma superior:<br />
+<img alt="" src="../img/detalleSoporteZumb.png" />  </p>
+<h1 id="programacion">Programación</h1>
+<p>Nosotros programaremos el Rupertobot con mi aplicación <a href="https://agomezgar.github.io/masayloBlocklyLinux/www/">MasayloBlockly</a>, pero tú puedes utilizar el IDE que quieras (en realidad, lo más educativo sería usar el de Arduino, pero en un aula de Tecnología, en una clase de 55 minutos, el tiempo es limitadísimo).<br />
+<img alt="" src="../img/ejemploMasayloBlockly.png" />  </p></div>
             </div>
         </div>
 
@@ -178,5 +206,5 @@
 
 <!--
 MkDocs version : 1.2.2
-Build Date UTC : 2023-12-23 10:51:49.882875+00:00
+Build Date UTC : 2023-12-31 13:05:13.181243+00:00
 -->
