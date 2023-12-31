@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Instrucciones de montaje - Rupertobot</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Rupertobot</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Introducción</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">Autor / Autores</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
+</li>
+                                    
+<li>
+    <a href="../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Instrucciones de montaje</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../STL/archivosSTL/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#instrucciones-de-montaje" class="nav-link">Instrucciones de montaje</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#plataforma-inferior-con-ballcasters" class="nav-link">Plataforma inferior con ballcasters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#montaje-de-las-columnas" class="nav-link">Montaje de las columnas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="instrucciones-de-montaje">Instrucciones de montaje</h1>
+<p>A lo largo de este documento (que intentaré ir haciendo más extensivo y claro con el tiempo), te explico cómo montar un Rupertobot.</p>
+<h2 id="plataforma-inferior-con-ballcasters">Plataforma inferior con ballcasters</h2>
+<p>Necesitarás las siguientes piezas:  </p>
+<table>
+<thead>
+<tr>
+<th align="center">Relación de piezas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Plataforma inferior(1 pieza)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/plataformaInferior.png" width="250"></td>
+</tr>
+<tr>
+<td align="center">Ballcasters (2 piezas)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/ballcaster.png" width="120"></td>
+</tr>
+<tr>
+<td align="center">Soporte de sensores IR/US (1 pieza, optativo; no la montes si no tienes los sensores)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/soporteSensores.png" width="200"></td>
+</tr>
+<tr>
+<td align="center">Portapilas para 6 pilas AA(1 pieza); si en su lugar deseas usar un portapilas de solo 5 pilas, del tipo las cinco en línea, podrás asegurarlo a las columnas que montarás después)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/portapilas6xAA.png" width="200"></td>
+</tr>
+<tr>
+<td align="center">Tuercas de métrica 3 (8 piezas)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/tuercaM3.png" width="120"></td>
+</tr>
+<tr>
+<td align="center">Tornillos de métrica 3 y 12 mm (8 piezas)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/tornilloM3x12.png" width="120"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="proceso-de-montaje">Proceso de montaje</h3>
+<p>Dependiendo de si vas a poner el soporte de los sensores de ultrasonidos/infrarrojos o no, el proceso es relativamente sencillo: coloca los dos ballcaster por debajo de la plataforma inferior; el trasero ya lo puedes sujetar con cuatro tornillos y tuercas, encajando cada tuerca en la depresión prevista a tal fin en la plataforma:<br />
+<img alt="" src="../img/montajeBallCaster1.png" /><br />
+ Si quieres dejar montado el soporte para sensores, el mejor sitio para instalarlo es delante del hueco del portapilas; como es lógico, entonces las tuercas de esa zona no las encajarás contra los huecos en la plataforma, sino contra el propio sensor:<br />
+<img alt="" src="../img/portaSensoresColocado.png" /><br />
+Si vas a usar el portapilas de 6, recuerda que lo debes encajar en la protuberancia lista a tal efecto en la plataforma, aunque no lo vas a poder asegurar hasta que montes las columnas:<br />
+<img alt="" src="../img/portapilasColocado.png" /></p>
+<h3 id="resumen">Resumen</h3>
+<p>Te dejo aquí una animación que resume el proceso hasta ahora (bien sencillo, como podrás comprobar).<br />
+<img alt="" src="../animaciones/montajeBallCaster.gif" />  </p>
+<h2 id="montaje-de-las-columnas">Montaje de las columnas</h2>
+<p>Ahora tienes que tener preparada la siguiente relación de elementos:  </p>
+<table>
+<thead>
+<tr>
+<th align="center">Relación de piezas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Columna (6 piezas) (atentos, que importa la posición en la que rota; orientaros siempre por la posición del hueco que dejo para embutir la tuerca)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/piezaColumna.png" width="250"></td>
+</tr>
+<tr>
+<td align="center">Tuercas de métrica 3 (12 piezas)</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/tuercaM3.png" width="120"></td>
+</tr>
+<tr>
+<td align="center">Tornillos de métrica 3, longitud 14-16 mm</td>
+</tr>
+<tr>
+<td align="center"><img src="../img/tornilloM3x12.png" width="200"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="proceso-de-montaje_1">Proceso de montaje</h3>
+<p>En esta ocasión es sencillo. Mete las tuercas en los huecos de las columnas pensado para ellas, y atorníllalas a la plataforma inferior desde abajo con los tornillos. Da un poco igual la longitud exacta de estos tornillos, siempre que exceda de los 12 mm y no sobrepase los 20 mm.<br />
+<img alt="" src="../img/montajeColumnas2.png" />  </p>
+<h3 id="resumen_1">Resumen</h3>
+<p>De nuevo una animación, ¡no dirás que te lo estoy poniendo difícil!<br />
+<img alt="" src="../animaciones/montajeColumnas.gif" />  </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
