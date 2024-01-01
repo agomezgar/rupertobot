@@ -55,6 +55,27 @@
                             <li class="navitem">
                                 <a href="montaje/" class="nav-link">Instrucciones de montaje</a>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="alimentacion/" class="dropdown-item">Alimentación</a>
+</li>
+                                    
+<li>
+    <a href="conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
+</li>
+                                    
+<li>
+    <a href="conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
+</li>
+                                    
+<li>
+    <a href="conexionadoZumbador/" class="dropdown-item">Zumador</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -122,9 +143,9 @@
 <p>Como he dicho antes, Rupertobot intenta ser un robot modular para facilitar al máximo su montaje por parte de los no iniciados. Puede funcionar sin sensor ni actuador alguno, aparte de los típicos stepper 28BYJ-48, que tantas alegrías nos han dado con Arduino, y que en España tienen su máximo exponente en su uso con el <a href="https://escornabot.com/es/index">Escornabot</a>. Estos motores, conocidos también como motores paso a paso, se caracterizan por ir rotando fracciones de grado si se excitan sus cuatro bobinas en el orden adecuado.  </p>
 <p><img alt="" src="img/stepper.png" /><br />
 En un principio, Si montas el Rupertobot sólo con estos dos motores, podrás programarlo para que avance y gire en cualquier sentido, con una precisión milimétrica (bueno... más o menos... que es un robot de los baratitos, no nos flipemos).<br />
-No obstante, a medida que ganes confianza, podrás dotar a tu Rupertobot de un sensor de distancia HC-SR04. Ello le permitirá detectar obstáculos y esquivarlos (o embestirlos.. todo depende de tí).<br />
-<img alt="" src="./img/HCRSR04.png" /><br />
-También puedes completar el conjunto con dos sensores de infrarrojos modelo FC-51, que pueden usarse, a su vez, como sensores de distancia (con mucho menos alcance que el HCSR04), pero que a nosotros nos vendrá mucho mejor utilizar como discriminadores blanco-negro, para poder programar al Rupertobot como siguelíneas o resuelvelaberintos.<br />
+No obstante, a medida que ganes confianza, podrás dotar a tu Rupertobot de un sensor de distancia HC-SR04. Ello le permitirá detectar obstáculos y esquivarlos (o embestirlos.. todo depende de tí).  </p>
+<p><img alt="" src="img/HCSR04.png" />  </p>
+<p>También puedes completar el conjunto con dos sensores de infrarrojos modelo FC-51, que pueden usarse, a su vez, como sensores de distancia (con mucho menos alcance que el HCSR04), pero que a nosotros nos vendrá mucho mejor utilizar como discriminadores blanco-negro, para poder programar al Rupertobot como siguelíneas o resuelvelaberintos.<br />
 <img alt="" src="img/sensor-IR.png" /><br />
 De hecho, aquí tienes un detalle de cómo irían montados un tipo de estos sensores, o los dos, dentro del Rupertobot. Si no los vas a usar, no necesitas imprimir la pieza de soporte de sensores.<br />
 <img alt="" src="img/montajeSensores.png" /><br />
@@ -215,5 +236,5 @@ Aquí te dejo un detalle de cómo quedaría instalado el zumbador dentro de la p
 
 <!--
 MkDocs version : 1.2.2
-Build Date UTC : 2023-12-31 21:55:33.539515+00:00
+Build Date UTC : 2024-01-01 09:04:45.654700+00:00
 -->

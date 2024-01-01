@@ -55,6 +55,27 @@
                             <li class="navitem active">
                                 <a href="./" class="nav-link">Instrucciones de montaje</a>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../alimentacion/" class="dropdown-item">Alimentación</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumador</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -69,7 +90,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../alimentacion/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -91,21 +112,57 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#instrucciones-de-montaje" class="nav-link">Instrucciones de montaje</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#plataforma-inferior-con-ballcasters" class="nav-link">Plataforma inferior con ballcasters</a>
+            <li class="nav-item" data-level="1"><a href="#introduccion" class="nav-link">Introducción</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#montaje-de-las-columnas" class="nav-link">Montaje de las columnas</a>
+            
+            <li class="nav-item" data-level="1"><a href="#plataforma-inferior-con-ballcasters" class="nav-link">Plataforma inferior con ballcasters</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#proceso-de-montaje" class="nav-link">Proceso de montaje</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#motores-y-plataforma-superior" class="nav-link">Motores y plataforma superior</a>
+            <li class="nav-item" data-level="2"><a href="#resumen" class="nav-link">Resumen</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#ruedas-y-circuiteria" class="nav-link">Ruedas y circuitería</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#montaje-de-las-columnas" class="nav-link">Montaje de las columnas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#proceso-de-montaje_1" class="nav-link">Proceso de montaje</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen_1" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#motores-y-plataforma-superior" class="nav-link">Motores y plataforma superior</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#proceso-de-montaje_2" class="nav-link">Proceso de montaje</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen_2" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#ruedas-y-circuiteria" class="nav-link">Ruedas y circuitería</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#proceso-de-montaje_3" class="nav-link">Proceso de montaje</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen_3" class="nav-link">Resumen</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -116,9 +173,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="instrucciones-de-montaje">Instrucciones de montaje</h1>
+<h1 id="introduccion">Introducción</h1>
 <p>A lo largo de este documento (que intentaré ir haciendo más extensivo y claro con el tiempo), te explico cómo montar un Rupertobot.</p>
-<h2 id="plataforma-inferior-con-ballcasters">Plataforma inferior con ballcasters</h2>
+<h1 id="plataforma-inferior-con-ballcasters">Plataforma inferior con ballcasters</h1>
 <p>Necesitarás las siguientes piezas:  </p>
 <table>
 <thead>
@@ -165,17 +222,17 @@
 </tr>
 </tbody>
 </table>
-<h3 id="proceso-de-montaje">Proceso de montaje</h3>
+<h2 id="proceso-de-montaje">Proceso de montaje</h2>
 <p>Dependiendo de si vas a poner el soporte de los sensores de ultrasonidos/infrarrojos o no, el proceso es relativamente sencillo: coloca los dos ballcaster por debajo de la plataforma inferior; el trasero ya lo puedes sujetar con cuatro tornillos y tuercas, encajando cada tuerca en la depresión prevista a tal fin en la plataforma:<br />
 <img alt="" src="../img/montajeBallCaster1.png" /><br />
  Si quieres dejar montado el soporte para sensores, el mejor sitio para instalarlo es delante del hueco del portapilas; como es lógico, entonces las tuercas de esa zona no las encajarás contra los huecos en la plataforma, sino contra el propio sensor:<br />
 <img alt="" src="../img/portaSensoresColocado.png" /><br />
 Si vas a usar el portapilas de 6, recuerda que lo debes encajar en la protuberancia lista a tal efecto en la plataforma, aunque no lo vas a poder asegurar hasta que montes las columnas:<br />
 <img alt="" src="../img/portapilasColocado.png" /></p>
-<h3 id="resumen">Resumen</h3>
+<h2 id="resumen">Resumen</h2>
 <p>Te dejo aquí una animación que resume el proceso hasta ahora (bien sencillo, como podrás comprobar).<br />
 <img alt="" src="../animaciones/montajeBallCaster.gif" />  </p>
-<h2 id="montaje-de-las-columnas">Montaje de las columnas</h2>
+<h1 id="montaje-de-las-columnas">Montaje de las columnas</h1>
 <p>Ahora tienes que tener preparada la siguiente relación de elementos:  </p>
 <table>
 <thead>
@@ -204,13 +261,13 @@ Si vas a usar el portapilas de 6, recuerda que lo debes encajar en la protuberan
 </tr>
 </tbody>
 </table>
-<h3 id="proceso-de-montaje_1">Proceso de montaje</h3>
+<h2 id="proceso-de-montaje_1">Proceso de montaje</h2>
 <p>En esta ocasión es sencillo. Mete las tuercas en los huecos de las columnas pensado para ellas, y atorníllalas a la plataforma inferior desde abajo con los tornillos. Da un poco igual la longitud exacta de estos tornillos, siempre que exceda de los 12 mm y no sobrepase los 20 mm.<br />
 <img alt="" src="../img/montajeColumnas2.png" />  </p>
-<h3 id="resumen_1">Resumen</h3>
+<h2 id="resumen_1">Resumen</h2>
 <p>De nuevo una animación, ¡no dirás que te lo estoy poniendo difícil!<br />
 <img alt="" src="../animaciones/montajeColumnas.gif" />  </p>
-<h2 id="motores-y-plataforma-superior">Motores y plataforma superior</h2>
+<h1 id="motores-y-plataforma-superior">Motores y plataforma superior</h1>
 <p>Es el momento de atornillar nuestros stepper y cerrar al Rupertobot con la plataforma superior. (Te aconsejo que embutas primero el interruptor en esta última, con dos cables ya soldados para alimentar luego a la Arduino).  </p>
 <table>
 <thead>
@@ -245,14 +302,15 @@ Si vas a usar el portapilas de 6, recuerda que lo debes encajar en la protuberan
 </tr>
 </tbody>
 </table>
-<h3 id="proceso-de-montaje_2">Proceso de montaje</h3>
+<h2 id="proceso-de-montaje_2">Proceso de montaje</h2>
 <p>Atornillamos los stepper a las columnas (insisto, tienen orientación con respecto al eje Z; se supone que los motores paso a paso van atornillados a los taladros más bajos de las columnas)<br />
 <img alt="" src="../img/montajeStepper1.png" /><br />
 Nos toca colocar la plataforma superior (ojo de nuevo a la orientación si usas el soporte para sensor de infrarrojos; en teoría, la Arduino debería quedar en el frontal del robot). Como puedes comprobar, se asegura atornillándola a las columnas que ya habías fijado a la plataforma inferior. ¡Está todo pensado!.<br />
-<img alt="" src="../img/atornillaMotores2.png" />
-¡Cada vez queda menos!. De nuevo te dejo una animación de esta fase del proceso (me he equivocado, me faltan dos tornillos para atornillar la plataforma superior a las columnas interiores, pero me da mucha pereza rehacer la animación):<br />
+<img alt="" src="../img/atornillaMotores2.png" /></p>
+<h2 id="resumen_2">Resumen</h2>
+<p>¡Cada vez queda menos!. De nuevo te dejo una animación de esta fase del proceso (me he equivocado, me faltan dos tornillos para atornillar la plataforma superior a las columnas interiores, pero me da mucha pereza rehacer la animación):<br />
 <img alt="" src="../animaciones/atornillaMotores.gif" />  </p>
-<h2 id="ruedas-y-circuiteria">Ruedas y circuitería</h2>
+<h1 id="ruedas-y-circuiteria">Ruedas y circuitería</h1>
 <p>¡Bueno!. Pues vamos a ir cerrando el tema, que después del montaje mecánico nos queda todo el rollo del conexionado.  </p>
 <table>
 <thead>
@@ -293,11 +351,13 @@ Nos toca colocar la plataforma superior (ojo de nuevo a la orientación si usas 
 </tr>
 </tbody>
 </table>
+<h2 id="proceso-de-montaje_3">Proceso de montaje</h2>
 <p>En cuanto al tema de ruedas, os contaré un secreto: vale cualquiera de las del Escornabot (echad un vistazo a Thingiverse) o las del <a href="https://clubroboticagranada.github.io/MASAYLO-CRG">Masaylo</a>. El caso es que están diseñadas para ajustarse bastante bien al eje de los motores. No obstante, para no parecer poco profesional (spoiler: no lo soy en absoluto, pero bueno...) no he querido dejar las ruedas sin su propio sistema de ajuste por tornillo. Si veis que os quedan bailonas en el eje, usad un tornillo de 10 mm y una tuerca, ambos de métrica 3.<br />
 <img alt="" src="../img/atornillaRueda.png" /><br />
 Lo que queda ya es cosa de poco. Atornillamos la circuitería (nuestra Arduino y los dos driver de ambos stepper) a la plataforma superior<br />
-<img alt="" src="../img/atornillaCircuiteria.png" /><br />
-¡Y ya estaría todo!. Para rematar, te dejo la última animación del montaje. ¡Espero que no hayas tenido mucho problema con el ensamblado!. Recuerda que Rupertobot es aún un robot educativo, pero experimental.<br />
+<img alt="" src="../img/atornillaCircuiteria.png" /></p>
+<h2 id="resumen_3">Resumen</h2>
+<p>¡Y ya estaría todo!. Para rematar, te dejo la última animación del montaje. ¡Espero que no hayas tenido mucho problema con el ensamblado!. Recuerda que Rupertobot es aún un robot educativo, pero experimental.<br />
 <img alt="" src="../animaciones/atornillaCircuiteria.gif" />  </p></div>
             </div>
         </div>
