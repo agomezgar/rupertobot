@@ -37,7 +37,7 @@
                                 <a href=".." class="nav-link">Introducción</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">Autor / Autores</a>
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
@@ -72,7 +72,7 @@
 </li>
                                     
 <li>
-    <a href="../conexionadoZumbador/" class="dropdown-item">Zumador</a>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
 </li>
                                 </ul>
                             </li>
@@ -122,6 +122,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#ojo-a-la-alimentacion" class="nav-link">Ojo a la alimentación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -137,7 +141,73 @@ Los motores que usamos son los 28BYJ-48, uno de los modelos más populares en el
 <img alt="" src="../img/stepperReal.jpg" /><br />
 Por añadidura, el 28BYJ-48 incorpora un mecanismo reductor de 1/64, lo que vuelve a reducir 64 veces su avance, multiplicando por el mismo número, por lo tanto, su par motor. En total, estos motores precisan un total de 4096 pasos (repito, esto significa ir excitando cada una de sus cuatro bobinas en el orden adecuado) para dar una vuelta completa. Esto significa que cada paso implica un avance de 0.088º, lo que tendréis que aceptar que supone una precisión exquisita en un modelo tan baratito.<br />
 En realidad, y atendiendo a <a href="https://www.luisllamas.es/motor-paso-paso-28byj-48-arduino-driver-uln2003/">la página de Luis Llamas</a> (y que os recomiendo visitéis; Luis es un referente en el mundo maker), el reductor no es tan preciso, y el número auténtico de pasos para una revolución completa es de <strong>4076</strong>, no 4096. Y, según mi experiencia, al final cada motor tiene sus propias características, según donde lo hayas comprado (yo me he encontrado motores con una relación de transmisión mucho más pequeña que han hecho salir disparado a mi escornabot, por ejemplo). Vamos, que al final tendrás que experimentar para encontrar el número adecuado.  </p>
-<h2 id="conexionado">Conexionado</h2></div>
+<h2 id="conexionado">Conexionado</h2>
+<p>Vamos a conectar las bobinas de los motores de la siguiente manera:  </p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Motor derecho</strong></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>ENTRADA DRIVER</strong></td>
+<td align="center"><strong>PIN DE ARDUINO</strong></td>
+</tr>
+<tr>
+<td align="center">IN1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">IN2</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">IN3</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">IN4</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Motor izquierdo</strong></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>ENTRADA DRIVER</strong></td>
+<td align="center"><strong>PIN DE ARDUINO</strong></td>
+</tr>
+<tr>
+<td align="center">IN1</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="center">IN2</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">IN3</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">IN4</td>
+<td align="center">6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SPOILER</strong> Como ya te dije, nunca acabo de estar seguro del orden de conexión de los pines en los ULN2003. Normalmente, a mí me funciona así. No obstante, en cuanto empieces con tus primeras pruebas, si alguno de los motores funciona al revés, lo único que tienes que hacer es invertir el orden de estos cuatro cables. Sólo asegúrate de que <strong>los conectas en orden, seguidos</strong> (y a los mismos pines, sólo que al revés, claro).  </p>
+<p>Aquí te dejo el esquema de conexión (repito, el que a mí me funciona en un principio):<br />
+<img alt="Conexionado de los stepper" src="../img/conexionadoSteppers.jpg" />  </p>
+<h2 id="ojo-a-la-alimentacion">Ojo a la alimentación</h2>
+<p>Por razones de simplicidad, en el esquema anterior no he añadido la alimentación de ambos driver, que te he explicado en el apartado de <a href="../alimentacion/">Alimentación</a>. <strong>Pero tienes que alimentar ambos circuitos, como ya te he explicado, conectando las patillas marcadas con los signos - y + a la Arduino o al portapilas</strong>. De lo contrario, los motores no se moverán.</p></div>
             </div>
         </div>
 

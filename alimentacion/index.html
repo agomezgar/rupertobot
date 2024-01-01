@@ -37,7 +37,7 @@
                                 <a href=".." class="nav-link">Introducción</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">Autor / Autores</a>
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
@@ -72,7 +72,7 @@
 </li>
                                     
 <li>
-    <a href="../conexionadoZumbador/" class="dropdown-item">Zumador</a>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
 </li>
                                 </ul>
                             </li>
@@ -129,6 +129,10 @@
             
             <li class="nav-item" data-level="1"><a href="#y-los-motores" class="nav-link">¿Y los motores?</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#resumen" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -142,15 +146,17 @@
 <p>En un principio, la plataforma superior está pensada para embutir un conmutador de los que usamos en las Aulas Taller de Tecnología, de tipo deslizante, de unos 15x7 mm de planta. Si tienes de otro tipo, siempre puedes tomar el archivo CAD de la plataforma superior y modificarlo para adaptarlo al tuyo.<br />
 <img alt="Conmutador" src="../img/conmutadorDeslizante.jpg" />  </p>
 <h1 id="como-alimento">¿Cómo alimento?</h1>
-<p>No es difícil. Espero que hayas tenido previsto soldar un par de cables primero a tu interruptor/conmutador, para facilitar el conexionado posterior. La idea es: polo positivo-&gt;Interruptor-&gt;Vin de Arduino/polo negativo-&gt;GND de Arduino (dicho mal y pronto).<br />
+<p>No es difícil. Espero que hayas tenido previsto soldar un par de cables primero a tu interruptor/conmutador, para facilitar el conexionado posterior. La idea es: polo positivo-&gt;Interruptor-&gt;Entraa <strong>Vin</strong> (no 5V) de Arduino/polo negativo-&gt;GND de Arduino (dicho mal y pronto).<br />
 <img alt="Alimentación de Arduino" src="../img/alimentacionArduino.jpg" />  </p>
 <h1 id="y-los-motores">¿Y los motores?</h1>
-<p>Yo estoy alimentando los drivers de los motores directamente desde la salida de 5 V de mi Arduino (yo suelo utilizar la Arduino Nano con su shield, que me da más juego, al contar con tantos pines de 5 V y GND).<br />
+<p>Yo estoy alimentando los drivers ULN2003 de los motores directamente desde la salida de 5 V de mi Arduino (yo suelo utilizar la Arduino Nano con su shield, que me da más juego, al contar con tantos pines de 5 V y GND).<br />
 <img alt="Imagen de Arduino Nano montada en shield" src="../img/nanoShield.jpg" /><br />
 Con este conexionado, a mí el Rupertobot me va de miedo (vale, no es un velocista como Masaylo, ya lo hemos dicho varias veces; el caso es que funciona muy bien).
 <img alt="Alimentación Arduino y motores" src="../img/alimentacionDrivers.jpg" /><br />
 Otra opción puede ser conectar ambos drivers al interruptor, de modo que en vez de darles la tensión de 5 V de Arduino, les llegue la de 9 V del portapilas. Yo aún no lo he probado, pero en teoría deberían funcionar igual e incluso mejor.<br />
-<img alt="Alimentación de motores directamente dese portapilas" src="../img/alimentacionDrivers2.jpg" />  </p></div>
+<img alt="Alimentación de motores directamente dese portapilas" src="../img/alimentacionDrivers2.jpg" />  </p>
+<h2 id="resumen">Resumen</h2>
+<p>La alimentación el Rupertobot es muy simplona: la Arduino se alimenta, con el interruptor/conmutador por medio, del portapilas a través de los pines Vin y GND. En cuanto a los driver ULN2003, puedes alimentarlos desde la tarjeta o directamente desde el portapilas. Decídete por la solución que más rabia te de.</p></div>
             </div>
         </div>
 

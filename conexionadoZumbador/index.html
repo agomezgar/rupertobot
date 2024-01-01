@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Zumador - Rupertobot</title>
+        <title>Zumbador - Rupertobot</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -37,7 +37,7 @@
                                 <a href=".." class="nav-link">Introducción</a>
                             </li>
                             <li class="navitem">
-                                <a href="../about/" class="nav-link">Autor / Autores</a>
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
@@ -72,7 +72,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Zumador</a>
+    <a href="./" class="dropdown-item active">Zumbador</a>
 </li>
                                 </ul>
                             </li>
@@ -114,6 +114,18 @@
             
             <li class="nav-item" data-level="1"><a href="#conexionado-del-piezoelectrico-o-zumbador" class="nav-link">Conexionado del piezoeléctrico o zumbador</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#principio-fisico-del-piezoelectrico" class="nav-link">Principio físico del piezoeléctrico</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conexionado" class="nav-link">Conexionado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -121,7 +133,38 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="conexionado-del-piezoelectrico-o-zumbador">Conexionado del piezoeléctrico o zumbador</h1></div>
+<h1 id="conexionado-del-piezoelectrico-o-zumbador">Conexionado del piezoeléctrico o zumbador</h1>
+<h2 id="principio-fisico-del-piezoelectrico">Principio físico del piezoeléctrico</h2>
+<p>Si acudes a fuentes fiables (al menos, bastante más fiables que este humilde sitio), aprenderás que lo que aquí llamo zumbador es un dispositivo que puede emitir sonidos, normalmente basándose en el efecto <strong>piezoeléctrico</strong>. Según este efecto (así, a grandes rasgos), hay materiales que, sometidos a una tensión eléctrica, se deforman y emiten un pequeño chasquido. De hecho, si conectas directamente este dispositivo a los pines 5V y GND de Arduino, en algunos casos emitirá directamente un sonido, chirriante, irritante, continuo. En ese caso, el zumbador que tienes es de tipo <em>activo</em>. Si queda en silencio, es de tipo <em>pasivo</em>. No te preocupes, igualmente podrás hacer que suene.<br />
+<img alt="Zumbadores" src="../img/zumbadores.jpg" /><br />
+El caso es que, si conectas el polo positivo de tu zumbador (normalmente, tiene la patilla más larga, y además tiene por encima el símbolo +) a un pin de Arduino  podrás reproducir distintos tonos. ¿Cómo?. Sencillo. Arduino puede encender y apagar el pin elegido muy rápidamente, a la frecuencia que desees. Si, por ejemplo, programas la tarjeta para que envíe "1" y "0" alternativamente a dicho pin cada cierto tiempo, pongamos 2 milisegundos, harás que el piezoeléctrico se deforme 500 veces por segundo, emitiendo el mencionado chasquido cada vez. Eso hará que oigas un tono de 500 hertzios. Si quieres, por ejemplo, oír un tono más agudo, cambia la frecuencia de conexión/desconexión a 1 milisegundo. Ahora, el sonido emitido será de 1000 hertzios. Sencillo, ¿verdad?.  </p>
+<h2 id="conexionado">Conexionado</h2>
+<p>Esta vez está chupado, ¿no?. La patilla corta, a GND, y la larga, a un pin de Arduino. Yo me quedo con la 12.  </p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>CONEXIÓN DEL BUZZER/ZUMBADOR</strong></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>PATILLA DEL SENSOR</strong></td>
+<td align="center"><strong>PIN DE ARDUINO</strong></td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">GND</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Conexión de piezoeléctrico" src="../img/conexionZumbador.jpg" />  </p>
+<h2 id="resumen">Resumen</h2>
+<p>Un zumbador no tiene una gran utilidad técnica, pero siempre da vidilla. Además, pienso enseñarte a hacerle gorgear como R2-D2, que hasta tengo una pieza en MasayloBlockly para eso con el robot Masaylo. Pero bueno, ya lo iremos viendo. ¡Que la fuerza te acompañe!  </p></div>
             </div>
         </div>
 
