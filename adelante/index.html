@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Instalación en Mac OS - Rupertobot</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Hacia adelante - Rupertobot</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Rupertobot</a>
+                <a class="navbar-brand" href="..">Rupertobot</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,62 +34,62 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../.." class="nav-link">Introducción</a>
+                                <a href=".." class="nav-link">Introducción</a>
                             </li>
                             <li class="navitem">
-                                <a href="../../about/" class="nav-link">¿Quién soy?</a>
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
+    <a href="../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
 </li>
                                     
 <li>
-    <a href="../../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
+    <a href="../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
 </li>
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../../montaje/" class="nav-link">Instrucciones de montaje</a>
+                                <a href="../montaje/" class="nav-link">Instrucciones de montaje</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../alimentacion/" class="dropdown-item">Alimentación</a>
+    <a href="../alimentacion/" class="dropdown-item">Alimentación</a>
 </li>
                                     
 <li>
-    <a href="../../conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
+    <a href="../conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
 </li>
                                     
 <li>
-    <a href="../../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
+    <a href="../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
 </li>
                                     
 <li>
-    <a href="../../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programacion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../movimiento/" class="dropdown-item">Mover una rueda</a>
+    <a href="../movimiento/" class="dropdown-item">Mover una rueda</a>
 </li>
                                     
 <li>
-    <a href="../../adelante/" class="dropdown-item">Hacia adelante</a>
+    <a href="./" class="dropdown-item active">Hacia adelante</a>
 </li>
                                     
 <li>
-    <a href="../../atras/" class="dropdown-item">Hacia atras</a>
+    <a href="../atras/" class="dropdown-item">Hacia atras</a>
 </li>
                                 </ul>
                             </li>
@@ -101,6 +101,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../movimiento/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../atras/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -119,8 +129,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#instalacion-en-mac-os" class="nav-link">Instalación en Mac OS</a>
+            <li class="nav-item" data-level="1"><a href="#movimiento-hacia-adelante" class="nav-link">Movimiento  hacia adelante</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#adelante" class="nav-link">Adelante</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-en-masayloblockly" class="nav-link">Programa en MasayloBlockly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-tu-arduino" class="nav-link">Programa tu Arduino</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descarga-el-programa" class="nav-link">Descarga el programa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -128,8 +158,71 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="instalacion-en-mac-os">Instalación en Mac OS</h1>
-<p>TODO:</p></div>
+<h1 id="movimiento-hacia-adelante">Movimiento  hacia adelante</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Si hiciste el ejemplo anterior, estás preparado para crear distintos programas que permitan a tu Rupertobot moverse hacia adelante y hacia atrás, o moverse en cualquier sentido. </p>
+<h2 id="adelante">Adelante</h2>
+<p>Si comprendiste el programa <a href="../movimiento/">del ejemplo anterior</a>, entenderás ahora que para que tu Rupertobot se mueva hacia adelante, <strong>la rueda derecha debería girar en sentido horario, mientras que la izquierda debería hacerlo en sentido antihorario</strong>. Esto implica que iremos activando los pines 2-&gt;3-&gt;4-&gt;5 en este orden para el motor derecho, y al mismo tiempo excitaremos 9-&gt;8-&gt;7-&gt;6 para el motor izquierdo:<br />
+<img alt="Movimiento hacia adelante" src="../img/secuenciaAdelante.png" />  </p>
+<h2 id="programa-en-masayloblockly">Programa en MasayloBlockly</h2>
+<p>La cosa no se complica demasiado. Sólo ten en cuenta que los grupos de cuatro pines se excitan en órdenes contrarios:<br />
+<img alt="Movimiento hacia adelante" src="../img/programaAdelante.png" />  </p>
+<h2 id="programa-tu-arduino">Programa tu Arduino</h2>
+<p>Si prefieres tirar del IDE de Arduino, el código básico sería:  </p>
+<pre><code class="language-json">void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, HIGH);
+  delay(2);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, HIGH);
+  digitalWrite(9, LOW);
+  delay(2);
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  delay(2);
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  delay(2);
+
+}
+</code></pre>
+<h2 id="descarga-el-programa">Descarga el programa</h2>
+<p><a href="../programas/adelante.bloc">Hacia adelante, programa para MasayloBlockly</a><br />
+<a href="../programas/adelante.ino">Hacia adelante, programa para IDE de Arduino</a>  </p></div>
             </div>
         </div>
 
@@ -138,11 +231,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
