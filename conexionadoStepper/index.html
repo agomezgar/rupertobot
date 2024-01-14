@@ -95,6 +95,10 @@
 <li>
     <a href="../izquierdaDerecha/" class="dropdown-item">Cómo girar</a>
 </li>
+                                    
+<li>
+    <a href="../adelanteAtras/" class="dropdown-item">Uso de funciones(I)</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -158,10 +162,11 @@
 <h2 id="principio-de-funcionamiento">Principio de funcionamiento</h2>
 <p>Los motores paso a paso, steppers en su acepción más vulgar y anglosajona, se caracterizan por incorporar 4 bobinas a las que hay que ir excitando en el orden correcto. (La ilustración que sigue pertenece a la Wikipedia, generada por el usuario Teravolt).<br />
 <a href="https://en.wikipedia.org/wiki/Stepper_motor" target="blank"><img src="../animaciones/animacionStepper.gif" alt="Animación de Wikipedia" class="center"><a><br />
-Los motores que usamos son los 28BYJ-48, uno de los modelos más populares en el mundo maker. De potencia y velocidad no matan, pero para los objetivos educativos de Rupertobot tenemos hardware de sobra. Como decía, este modelo gira cada vez que excitamos una de sus bobinas (<em>dar un paso</em>) un total de unos 5.63 grados sexagesimales (lo que implica dar 64 pasos para lograr una vuelta completa).<br />
+Los motores que usamos son los 28BYJ-48, uno de los modelos más populares en el mundo maker. De potencia y velocidad no matan, pero para los objetivos educativos de Rupertobot tenemos hardware de sobra. Como decía, este modelo gira cada vez que excitamos una de sus bobinas (<em>dar un paso</em>) un total de unos 11.25 grados sexagesimales (lo que implica dar 32 pasos para lograr una vuelta completa).<br />
 <img alt="" src="../img/stepperReal.jpg" /><br />
-Por añadidura, el 28BYJ-48 incorpora un mecanismo reductor de 1/64, lo que vuelve a reducir 64 veces su avance, multiplicando por el mismo número, por lo tanto, su par motor. En total, estos motores precisan un total de 4096 pasos (repito, esto significa ir excitando cada una de sus cuatro bobinas en el orden adecuado) para dar una vuelta completa. Esto significa que cada paso implica un avance de 0.088º, lo que tendréis que aceptar que supone una precisión exquisita en un modelo tan baratito.<br />
-En realidad, y atendiendo a <a href="https://www.luisllamas.es/motor-paso-paso-28byj-48-arduino-driver-uln2003/">la página de Luis Llamas</a> (y que os recomiendo visitéis; Luis es un referente en el mundo maker), el reductor no es tan preciso, y el número auténtico de pasos para una revolución completa es de <strong>4076</strong>, no 4096. Y, según mi experiencia, al final cada motor tiene sus propias características, según donde lo hayas comprado (yo me he encontrado motores con una relación de transmisión mucho más pequeña que han hecho salir disparado a mi escornabot, por ejemplo). Vamos, que al final tendrás que experimentar para encontrar el número adecuado.  </p>
+Por añadidura, el 28BYJ-48 incorpora un mecanismo reductor de 1/64, lo que vuelve a reducir 64 veces su avance, multiplicando por el mismo número, por lo tanto, su par motor. En total, estos motores precisan un total de 32*64=2048 pasos (repito, esto significa ir excitando cada una de sus cuatro bobinas en el orden adecuado) para dar una vuelta completa. Esto significa que cada paso implica un avance de 0.18º, lo que tendréis que aceptar que supone una precisión exquisita en un modelo tan baratito.  </p>
+<!-- En realidad, y atendiendo a [la página de Luis Llamas](https://www.luisllamas.es/motor-paso-paso-28byj-48-arduino-driver-uln2003/) (y que os recomiendo visitéis; Luis es un referente en el mundo maker), el reductor no es tan preciso, y el número auténtico de pasos para una revolución completa es de **4076**, no 4096.   -->
+<p>Esto atendiendo a los datasheet de este stepper... Pero, según mi experiencia, al final cada motor tiene sus propias características, según donde lo hayas comprado (yo me he encontrado motores con una relación de transmisión mucho más pequeña que han hecho salir disparado a mi escornabot, por ejemplo). Vamos, que al final tendrás que experimentar para encontrar el número adecuado.  </p>
 <h2 id="conexionado">Conexionado</h2>
 <p>Vamos a conectar las bobinas de los motores de la siguiente manera:  </p>
 <table>

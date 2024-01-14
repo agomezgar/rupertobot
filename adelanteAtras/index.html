@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Sensores US e IR - Rupertobot</title>
+        <title>Uso de funciones(I) - Rupertobot</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -55,7 +55,7 @@
                             <li class="navitem">
                                 <a href="../montaje/" class="nav-link">Instrucciones de montaje</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -68,7 +68,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Sensores US e IR</a>
+    <a href="../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
 </li>
                                     
 <li>
@@ -76,7 +76,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ejemplos de programación <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -97,7 +97,7 @@
 </li>
                                     
 <li>
-    <a href="../adelanteAtras/" class="dropdown-item">Uso de funciones(I)</a>
+    <a href="./" class="dropdown-item active">Uso de funciones(I)</a>
 </li>
                                 </ul>
                             </li>
@@ -110,12 +110,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../conexionadoStepper/" class="nav-link">
+                                <a rel="prev" href="../izquierdaDerecha/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../conexionadoZumbador/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -137,21 +137,36 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#conexionado-de-sensores-de-infrarrojos-y-ultrasonidos" class="nav-link">Conexionado de sensores de infrarrojos y ultrasonidos</a>
+            <li class="nav-item" data-level="1"><a href="#funciones-i" class="nav-link">Funciones (I)</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#sensor-de-ultrasonidos" class="nav-link">Sensor de ultrasonidos</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#sensores-de-infrarrojos" class="nav-link">Sensores de infrarrojos</a>
+            <li class="nav-item" data-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#una-primera-aproximacion" class="nav-link">Una primera aproximación</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#resumen" class="nav-link">Resumen</a>
+            <li class="nav-item" data-level="2"><a href="#como-simplificar-la-programacion-con-funciones" class="nav-link">¿Cómo simplificar la programación? ¡Con funciones!</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configurar-masayloblockly" class="nav-link">Configurar MasayloBlockly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mi-primera-funcion" class="nav-link">Mi primera función</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-tu-arduino" class="nav-link">Programa tu Arduino</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descarga-los-programas" class="nav-link">Descarga los programas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -159,139 +174,93 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="conexionado-de-sensores-de-infrarrojos-y-ultrasonidos">Conexionado de sensores de infrarrojos y ultrasonidos</h1>
-<p>Estos sensores son muy sencillitos de instalar. Como verás, atacaremos, por un lado, su alimentación, y por otro lado, los pines digitales que comunicarán a la Arduino los cambios en el entorno que se detecten. Empecemos, pues.  </p>
-<h2 id="sensor-de-ultrasonidos">Sensor de ultrasonidos</h2>
-<p>(Extraído del primer manual del robot Masaylo): Detección de distancias por ultrasonidos
-Como casi todos los otros campos de conocimientos tratados a lo largo de este texto relacionados con la Robótica Educativa, existe ya una extensa bibliografía en la red sobre el uso de módulos como el HC-SR04 o el PING de Parallax en la red. 
-El principio básico de cualquier sensor de ultrasonidos es muy sencillo:    </p>
-<ul>
-<li>Un circuito emisor, comúnmente denominado “Trigger”, lanza un pulso de ultrasonidos (para ello, Arduino debe emitir un “1” en la patilla correspondiente).  </li>
-<li>Un temporizador se pone a 0 y empieza a contar.  </li>
-<li>Un circuito receptor, de nombre común “Echo”,  detecta el ultrasonido que ha rebotado (siempre que haya obstáculo) y envía un “1” lógico a una patilla de Arduino (puede ser o no la misma que hemos conectado al emisor, dependiendo del modelo).</li>
-<li>Detectado el “1” lógico en el pin conectado a “Echo” el temporizador se para.</li>
-<li>Conocida la velocidad del sonido (unos 343 m/sg), y que el sonido ha tenido que recorrer el espacio hasta el obstáculo dos veces, ida y vuelta, se realiza el cálculo correspondiente. En recorrer 1 cm, el tiempo que tarda el sonido es 0,000029155 sg. Teniendo en cuenta que la distancia es doble, un obstáculo localizado a 1 cm del sensor tardaría en detectarse 0,000058309 sg, es decir, 58,309 microsegundos, valor que utilizaremos para convertir el tiempo medido en distancia en cm.<br />
-<img alt="Principio del sensor de ultrasonidos" src="../img/principioUltrasonidos.png" /></li>
-</ul>
-<p>¡Pero de eso nos preocuparemos más tarde!. El caso es que nosotros estamos utilizando el sensor HCSR04, que tiene a la sazón cuatro pines (la imagen está extraída de Wikipedia):<br />
-<img alt="Imagen de sensor US" src="../img/hcsr04.jpg" />  </p>
-<ul>
-<li>Vcc y GND para la alimentación del sensor. Su conexión parece evidente.  </li>
-<li>Un pin, TRIG, que es el que emitirá un pulso cuando se le de un "1" lógico.</li>
-<li>Un pin, ECHO, que es el que enviará a la Arduino un "1" cuando detecte el pulso si éste encuentra un obstáculo y se ve rebotado de regreso.  </li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>CONEXIÓN DEL HCSR04</strong></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>PATILLA DEL SENSOR</strong></td>
-<td align="center"><strong>PIN DE ARDUINO</strong></td>
-</tr>
-<tr>
-<td align="center">Vcc</td>
-<td align="center">5V</td>
-</tr>
-<tr>
-<td align="center">Trig</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">Echo</td>
-<td align="center">11</td>
-</tr>
-<tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
-</tr>
-<tr>
-<td align="center"><img alt="Conexión sensor US" src="../img/conexionUS.jpg" /></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">Por supuesto, las patillas Trig y Echo puedes conectarlas a cualquier otro pin digital que te haya quedado libre (salvo el 0 y el 1, que no deben usarse por que son los pines que utiliza Arduino para comunicarse con tu ordenador mediante el puerto serie). En mi caso, utilizaré este conexionado para los ejemplos que iré desarrollando, por una mera cuestión de llevar un cierto orden.</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="sensores-de-infrarrojos">Sensores de infrarrojos</h2>
-<p>(Extraído de mi primer libro sobre Masaylo):<br />
-Un sensor de infrarrojos participa del mismo principio funcional que uno de ultrasonidos: se alimenta un diodo LED infrarrojo para que emita un pulso de luz,detectable por un fototransistor, en caso de haber rebotado en algún obstáculo. No obstante, este tipo de sensores presenta características propias que lo distingue de un sensor de ultrasonidos:  </p>
-<p><strong>Ventajas</strong>  </p>
-<ul>
-<li>Son sensiblemente más baratos  </li>
-<li>Disponen de un potenciómetro que permite ajustar la sensibilidad del sensor  </li>
-<li>La emisión de la luz infrarroja es continua, no se necesita pin de control. Así que sólo hacen falta tres conexiones: V, GND y OUT (pin de señal). Son más fáciles de instalar y de manejo más simple por parte del sistema de control.  </li>
-<li>Pueden detectar cambios, si no de color, sí de luminosidad en la superficie sobre la que apuntan, lo que les hace ideales para el diseño de robot siguelíneas  </li>
-</ul>
-<p><strong>Desventajas</strong>  </p>
-<ul>
-<li>Su rango de detección es sensiblemente más bajo que en el caso de los ultrasonidos. Raramente superan los 30 cm, en el mejor de los casos, en el FC-51</li>
-<li>Su sensibilidad es muy vulnerable a los cambios de luz en la estancia en la que se encuentre el robot, lo que obliga a continuos reajustes mediante el potenciómetro anexo. En ocasiones es recomendable rodear el par formado por el LED y el fototransistor por algún tipo de capuchón improvisado con cinta o cartón que reduzca al máximo el ruido ocasionado por dichos cambios de luz.</li>
-</ul>
-<p>Nosotros utilizaremos estos sensores de infrarrojos, concretamente el modelo FC-51 (es el más popular, pero tú puedes montar el que te parezca), a derecha e izquierda del Rupertobot, a modo de detectores blanco/negro. Con ello, podremos programar al robot como siguelíneas negras en campo blanco, o al revés, ya que cada sensor enviará un "1" (<em>veo blanco</em>) o un "0" (<em>veo negro</em>), y el programa podrá saber si se está saliendo del camino por la derecha o por la izquierda. </p>
-<p>Cada sensor tiene tres pines: Vcc y GND para alimentación, y OUT, que es el que dará un "1" o un "0" según lo que se encuentre:  </p>
-<p><img alt="Sensor FC-51" src="../img/fc51.png" />  </p>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>CONEXIÓN DEL SENSOR DERECHO</strong></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>PATILLA DEL SENSOR</strong></td>
-<td align="center"><strong>PIN DE ARDUINO</strong></td>
-</tr>
-<tr>
-<td align="center">Vcc</td>
-<td align="center">5V</td>
-</tr>
-<tr>
-<td align="center">OUT</td>
-<td align="center">A0 (también se identifica como 14)</td>
-</tr>
-<tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><strong>CONEXIÓN DEL SENSOR IZQUIERDO</strong></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>PATILLA DEL SENSOR</strong></td>
-<td align="center"><strong>PIN DE ARDUINO</strong></td>
-</tr>
-<tr>
-<td align="center">Vcc</td>
-<td align="center">5V</td>
-</tr>
-<tr>
-<td align="center">OUT</td>
-<td align="center">A1 (también se identifica como 15)</td>
-</tr>
-<tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
-</tr>
-</tbody>
-</table>
-<p>De nuevo, eres muy libre de cambiar el patillaje. Yo prefiero esta elección porque me reservo la patilla 12 para el zumbador (si la conecto al 13, sonaría de modo muy molesto al cargar los programas desde el ordenador), y me gusta que estos dos sensores vayan juntos.<br />
-<img alt="Conexionado de sensores de infrarrojos" src="../img/sensoresIR.jpg" />  </p>
-<h1 id="resumen">Resumen</h1>
-<p>Usando sólo tres pines de nuestra queridísima Arduino, podemos dotar al Rupertobot de dos capacidades muy útiles: detectar obstáculos, cuya distancia puede medir, y detectar niveles de color (claro/oscuro) en el suelo que pisa. Con ello, podremos programarlo como salvaobstáculos, siguelíneas, resuelvelaberintos, y otro montón de palabras complejas muy chulas de usar. A medida que vayas familiarizándote con su programación, disfrutarás mucho de este pequeñuelo.  </p></div>
+<h1 id="funciones-i">Funciones (I)</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Como habrás notado hasta ahora, podemos mover nuestro Rupertobot, pero los movimientos que obtenemos son continuos, esto es, no podemos alternarlos. Si empieza a moverse hacia adelante, así seguirá hasta que le cambiemos el programa. Es hora de darle un poco más de funcionalidad a nuestro robotejo, y para eso vamos a utilizar funciones.  </p>
+<h2 id="una-primera-aproximacion">Una primera aproximación</h2>
+<p>Para empezar, si yo quisiera que mi Rupertobot fuera hacia adelante durante un tiempo, luego hacia atrás, giro izquierda, y giro derecha, para al final parar, podría usar bucles para repetir las secuencias que hemos visto en los ejemplos anteriores en el orden mencionado. Para el primer movimiento hacia adelante (no hago más porque la imagen que lo ilustrara sería kilométrica), haríamos algo así:<br />
+<img alt="Movimiento hacia adelante controlado mediante bucles" src="../img/primerAdelanteControlado.png" /><br />
+¿Qué es lo que he hecho? He usado un bucle. Como hemos dicho antes, tomaremos como referencia el hecho de que los steppers de nuestro Rupertobot necesitan 2048 pasos para dar una vuelta completa. Si te fijas bien en el primer ejemplo para mover el robot adelante, hay que explicar la secuencia de los 4 pasos al microcontrolador. Por lo tanto, si ese programa estipula 4 pasos, y quiero que de 2048 antes de pararse, pues como 2048/4=512, el bucle deberá repetirse 512 veces.  </p>
+<h2 id="como-simplificar-la-programacion-con-funciones">¿Cómo simplificar la programación? ¡Con funciones!</h2>
+<p>Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: <strong>Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros</strong>. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo ilustrando con ejemplos:  </p>
+<h2 id="configurar-masayloblockly">Configurar MasayloBlockly</h2>
+<p>Si vas a utilizar el programa MasayloBlockly que desarrollamos desde el IES Maestro Juan de Ávila (es algo artesanal, pero en clase nos está resultando muy útil), debes saber que por motivos de espacio, no suelen aparecer en el menú de bloques de la izquierda todas las opciones. Si quieres algún elemento (como es este caso) que no te aparezca, debes pinchar en el símbolo del engranaje (<strong>Preferencias</strong>), seleccionar la opción <strong>Nivel experto</strong>, y dentro del abanico de posibilidades, elige <strong>Funciones</strong>. Asegúrate también de dejar marcada la opción <strong>Entrada/Salida</strong>, que es la que te permite ir escribiendo unos y ceros en los pines de Arduino
+<img alt="Configurar MasayloBlockly" src="../img/configuracionMasaylo.png" />  </p>
+<h2 id="mi-primera-funcion">Mi primera función</h2>
+<p>Para empezar, vamos a crear una función muy simplificada, sin parámetros, que llamaremos simplemente <em>adelante</em>. Esta función se encargará de lo mismo que hemos hecho antes, es decir, impulsar al Rupertobot hacia adelante hasta que ambas ruedas den una revolución completa. Para ello, elige el bloque <strong>Funciones</strong>, y selecciona la primera pieza de puzzle, <em>Hacer</em>:<br />
+<img alt="Seleccionar función simple" src="../img/funciones1.png" /><br />
+Del programa anterior, quita la pieza <em>Fin</em> (no queremos interrumpir el programa definitivamente), y arrastra el resto dentro de la pieza <em>Hacer</em> (cambia el nombre <strong>hacer</strong> por <strong>adelante</strong>):<br />
+<img alt="Función adelante simplificada" src="../img/funciones2.png" /><br />
+Si volcaras el programa en el Rupertobot, verías que no hace nada aún. Se queda quieto. Parado. Como muerto. Qué penita da, ¿verdad?. Eso es porque hemos definido una función, pero no la hemos ejecutado aún. Esto es, hemos asociado al nombre <strong><em>adelante</em></strong> un conjunto de órdenes que repetirá 512 veces el proceso de mover las cuatro bobinas de cada uno de los dos stepper. Pero no hemos dado la orden de ejecutar la función. Vamos a resolver esto. Si te fijas, ahora, en el bloque <strong>Funciones</strong> aparece una nueva pieza, <strong><em>adelante</em></strong>, que puedes ir arrastrando al escritorio principal de la aplicación. Para que veas cómo funciona, vamos a crear el siguiente programa: 
+<img alt="Mi primer programa con funciones" src="../img/funciones3.png" /><br />
+Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 72 mm de diámetro, aproximadamente de 3,14*72=226,19 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web.  </p>
+<h2 id="programa-tu-arduino">Programa tu Arduino</h2>
+<p>Si quieres ver cómo quedaría la función <strong><em>adelante</em></strong> en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría tres veces, tal y como especificábamos en el primer ejemplo:</p>
+<pre><code class="language-json">void adelante() {
+  for (int count=0 ; count&lt;512 ; count++) {
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, HIGH);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, HIGH);
+    digitalWrite(9, LOW);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    delay(2);
+  }
+}
+
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop(){
+adelante();
+delay(3000);
+adelante();
+delay(3000);
+adelante();
+delay(3000);
+while(true);
+}
+</code></pre>
+<h2 id="descarga-los-programas">Descarga los programas</h2>
+<p><a href="../programas/funcionessinParametros.bloc">Ejemplo de funciones adelante, atrás, izquierda y derecha para MasayloBlockly</a><br />
+<a href="../programas/funcionessinParametros.ino">Ejemplo de funciones adelante, atrás, izquierda y derecha para la IDE de Arduino</a> </p></div>
             </div>
         </div>
 
