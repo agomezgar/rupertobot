@@ -99,6 +99,10 @@
 <li>
     <a href="./" class="dropdown-item active">Uso de funciones(I)</a>
 </li>
+                                    
+<li>
+    <a href="../adelanteAtras2/" class="dropdown-item">Uso de funciones(II)</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -115,7 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../adelanteAtras2/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -182,7 +186,7 @@
 <img alt="Movimiento hacia adelante controlado mediante bucles" src="../img/primerAdelanteControlado.png" /><br />
 ¿Qué es lo que he hecho? He usado un bucle. Como hemos dicho antes, tomaremos como referencia el hecho de que los steppers de nuestro Rupertobot necesitan 2048 pasos para dar una vuelta completa. Si te fijas bien en el primer ejemplo para mover el robot adelante, hay que explicar la secuencia de los 4 pasos al microcontrolador. Por lo tanto, si ese programa estipula 4 pasos, y quiero que de 2048 antes de pararse, pues como 2048/4=512, el bucle deberá repetirse 512 veces.  </p>
 <h2 id="como-simplificar-la-programacion-con-funciones">¿Cómo simplificar la programación? ¡Con funciones!</h2>
-<p>Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: <strong>Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros</strong>. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo ilustrando con ejemplos:  </p>
+<p>Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: <strong>Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros</strong>. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo explicando con ejemplos:  </p>
 <h2 id="configurar-masayloblockly">Configurar MasayloBlockly</h2>
 <p>Si vas a utilizar el programa MasayloBlockly que desarrollamos desde el IES Maestro Juan de Ávila (es algo artesanal, pero en clase nos está resultando muy útil), debes saber que por motivos de espacio, no suelen aparecer en el menú de bloques de la izquierda todas las opciones. Si quieres algún elemento (como es este caso) que no te aparezca, debes pinchar en el símbolo del engranaje (<strong>Preferencias</strong>), seleccionar la opción <strong>Nivel experto</strong>, y dentro del abanico de posibilidades, elige <strong>Funciones</strong>. Asegúrate también de dejar marcada la opción <strong>Entrada/Salida</strong>, que es la que te permite ir escribiendo unos y ceros en los pines de Arduino
 <img alt="Configurar MasayloBlockly" src="../img/configuracionMasaylo.png" />  </p>

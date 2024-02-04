@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Uso de funciones(II) - Rupertobot</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Rupertobot</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Introducción</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
+</li>
+                                    
+<li>
+    <a href="../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../montaje/" class="nav-link">Instrucciones de montaje</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../alimentacion/" class="dropdown-item">Alimentación</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ejemplos de programación <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../movimiento/" class="dropdown-item">Mover una rueda</a>
+</li>
+                                    
+<li>
+    <a href="../adelante/" class="dropdown-item">Hacia adelante</a>
+</li>
+                                    
+<li>
+    <a href="../atras/" class="dropdown-item">Hacia atras</a>
+</li>
+                                    
+<li>
+    <a href="../izquierdaDerecha/" class="dropdown-item">Cómo girar</a>
+</li>
+                                    
+<li>
+    <a href="../adelanteAtras/" class="dropdown-item">Uso de funciones(I)</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Uso de funciones(II)</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../adelanteAtras/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#funciones-ii" class="nav-link">Funciones (II)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#justificacion-matematica" class="nav-link">Justificación matemática</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#como-simplificar-la-programacion-con-funciones" class="nav-link">¿Cómo simplificar la programación? ¡Con funciones!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configurar-masayloblockly" class="nav-link">Configurar MasayloBlockly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mi-primera-funcion" class="nav-link">Mi primera función</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-tu-arduino" class="nav-link">Programa tu Arduino</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descarga-los-programas" class="nav-link">Descarga los programas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="funciones-ii">Funciones (II)</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Si has leído la sección anterior (es lo que uno supondría más lógico, pero cuando hablamos de estudiantes de Educación Secundaria, nunca desecho ninguna hipótesis), habrás aprendido a crear funciones de modo que puedes repetir el código varias veces, tantas como te limites a llamar a cada función por su nombre. No obstante, también hemos explicado que con ese enfoque, cada vez que llamemos a la función <strong><em>adelante</em></strong>, por ejemplo, Rupertobot siempre avanzará exactamente la misma distancia: 3,14 multiplicado por 72, es decir, 226,19 mm (más o menos). Esto es así porque tal y como hemos construido la función, ésta siempre se va a ejecutar exactamente del mismo modo, tal y como la hemos escrito. Lo ideal, ahora, sería que pudiéramos introducir un valor que permitiera a <strong><em>adelante</em></strong> repetir el bucle de su interior un número de veces variable, según la distancia que queramos avanzar. Para ello, pasamos a explicar cómo usar parámetros con nuestras funciones.  </p>
+<h2 id="justificacion-matematica">Justificación matemática</h2>
+<p>Lo que queremos hacer es usar funciones paramétricas en las que indiquemos en los casos de <strong><em>adelante</em></strong> y <strong><em>atras</em></strong>, cuántos centímetros queremos movernos, y en el de <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>, cuántos grados queremos girar. Tiremos, entonces, de nuestros conocimientos de geometría:<br />
+La función <strong><em>adelante</em></strong> original genera un total de 2048 pasos hacia adelante, lo que corresponde a una revolución completa en ambas ruedas del Rupertobot. Como el diámetro de dichas ruedas es alrededor de unos 72 mm (puede subir hasta 75 o incluso un poco más, según el grosor de las juntas tóricas), conociendo la fórmula de la longitud de una circunferencia, sabemos que eso equivaldría a un avance de 226.19 mm, o mejor, 22.619 cm. Quédate con el dato: 2048 pasos-&gt;22.62 cm.<br />
+Lo que resta es una regla de tres (que me perdonen los profes de Matemáticas, sé que esto no está bien visto) sencilla: Si 22,62 cm exigen 2048 pasos, entonces avanzar 1 cm exigirá 2048/22.619=90.5415 pasos. Ten en cuenta que el algoritmo inicial de <strong><em>adelante</em></strong> aplica 4 pasos a cada repetición, así que 90,5415/4=22.6354. Ése es el número de veces que tenemos que repetir este proceso por cada cm que queremos avanzar.<br />
+Por otro lado, si has probado la función <strong><em>izquierda</em></strong> o <strong><em>derecha</em></strong>, verás que como hacen avanzar una revolución completa a cada rueda (2048 pasos), haremos que el robot gire sobre su eje 180º. ¿Cuántos pasos necesito avanzar por grado sexagesimal, entonces?. La aritmética es sencilla, de nuevo. La función original, que da 2048 pasos, implica un giro de 180º. Así que un sólo grado corresponderá a 2048/180=11.3778 pasos. Teniendo en cuenta que las funciones originales implican 4 pasos por repetición, el algoritmo original debería repetirse 2.8444 veces por grado sexagesimal. Quédate, pues, con esos dos números: <strong>22.634</strong> y <strong>2.8444</strong>  </p>
+<p><img alt="Movimiento hacia adelante controlado mediante bucles" src="../img/primerAdelanteControlado.png" /><br />
+¿Qué es lo que he hecho? He usado un bucle. Como hemos dicho antes, tomaremos como referencia el hecho de que los steppers de nuestro Rupertobot necesitan 2048 pasos para dar una vuelta completa. Si te fijas bien en el primer ejemplo para mover el robot adelante, hay que explicar la secuencia de los 4 pasos al microcontrolador. Por lo tanto, si ese programa estipula 4 pasos, y quiero que de 2048 antes de pararse, pues como 2048/4=512, el bucle deberá repetirse 512 veces.  </p>
+<h2 id="como-simplificar-la-programacion-con-funciones">¿Cómo simplificar la programación? ¡Con funciones!</h2>
+<p>Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: <strong>Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros</strong>. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo explicando con ejemplos:  </p>
+<h2 id="configurar-masayloblockly">Configurar MasayloBlockly</h2>
+<p>Si vas a utilizar el programa MasayloBlockly que desarrollamos desde el IES Maestro Juan de Ávila (es algo artesanal, pero en clase nos está resultando muy útil), debes saber que por motivos de espacio, no suelen aparecer en el menú de bloques de la izquierda todas las opciones. Si quieres algún elemento (como es este caso) que no te aparezca, debes pinchar en el símbolo del engranaje (<strong>Preferencias</strong>), seleccionar la opción <strong>Nivel experto</strong>, y dentro del abanico de posibilidades, elige <strong>Funciones</strong>. Asegúrate también de dejar marcada la opción <strong>Entrada/Salida</strong>, que es la que te permite ir escribiendo unos y ceros en los pines de Arduino
+<img alt="Configurar MasayloBlockly" src="../img/configuracionMasaylo.png" />  </p>
+<h2 id="mi-primera-funcion">Mi primera función</h2>
+<p>Para empezar, vamos a crear una función muy simplificada, sin parámetros, que llamaremos simplemente <em>adelante</em>. Esta función se encargará de lo mismo que hemos hecho antes, es decir, impulsar al Rupertobot hacia adelante hasta que ambas ruedas den una revolución completa. Para ello, elige el bloque <strong>Funciones</strong>, y selecciona la primera pieza de puzzle, <em>Hacer</em>:<br />
+<img alt="Seleccionar función simple" src="../img/funciones1.png" /><br />
+Del programa anterior, quita la pieza <em>Fin</em> (no queremos interrumpir el programa definitivamente), y arrastra el resto dentro de la pieza <em>Hacer</em> (cambia el nombre <strong>hacer</strong> por <strong>adelante</strong>):<br />
+<img alt="Función adelante simplificada" src="../img/funciones2.png" /><br />
+Si volcaras el programa en el Rupertobot, verías que no hace nada aún. Se queda quieto. Parado. Como muerto. Qué penita da, ¿verdad?. Eso es porque hemos definido una función, pero no la hemos ejecutado aún. Esto es, hemos asociado al nombre <strong><em>adelante</em></strong> un conjunto de órdenes que repetirá 512 veces el proceso de mover las cuatro bobinas de cada uno de los dos stepper. Pero no hemos dado la orden de ejecutar la función. Vamos a resolver esto. Si te fijas, ahora, en el bloque <strong>Funciones</strong> aparece una nueva pieza, <strong><em>adelante</em></strong>, que puedes ir arrastrando al escritorio principal de la aplicación. Para que veas cómo funciona, vamos a crear el siguiente programa: 
+<img alt="Mi primer programa con funciones" src="../img/funciones3.png" /><br />
+Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 72 mm de diámetro, aproximadamente de 3,14*72=226,19 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web.  </p>
+<h2 id="programa-tu-arduino">Programa tu Arduino</h2>
+<p>Si quieres ver cómo quedaría la función <strong><em>adelante</em></strong> en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría tres veces, tal y como especificábamos en el primer ejemplo:</p>
+<pre><code class="language-json">void adelante() {
+  for (int count=0 ; count&lt;512 ; count++) {
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, HIGH);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, HIGH);
+    digitalWrite(9, LOW);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    delay(2);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    delay(2);
+  }
+}
+
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop(){
+adelante();
+delay(3000);
+adelante();
+delay(3000);
+adelante();
+delay(3000);
+while(true);
+}
+</code></pre>
+<h2 id="descarga-los-programas">Descarga los programas</h2>
+<p><a href="../programas/funcionessinParametros.bloc">Ejemplo de funciones adelante, atrás, izquierda y derecha para MasayloBlockly</a><br />
+<a href="../programas/funcionessinParametros.ino">Ejemplo de funciones adelante, atrás, izquierda y derecha para la IDE de Arduino</a> </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
