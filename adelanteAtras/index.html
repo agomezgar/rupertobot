@@ -167,6 +167,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#bueno-vamos-avanzando" class="nav-link">¡Bueno! Vamos avanzando...</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#descarga-los-programas" class="nav-link">Descarga los programas</a>
               <ul class="nav flex-column">
               </ul>
@@ -197,7 +201,8 @@ Del programa anterior, quita la pieza <em>Fin</em> (no queremos interrumpir el p
 <img alt="Función adelante simplificada" src="../img/funciones2.png" /><br />
 Si volcaras el programa en el Rupertobot, verías que no hace nada aún. Se queda quieto. Parado. Como muerto. Qué penita da, ¿verdad?. Eso es porque hemos definido una función, pero no la hemos ejecutado aún. Esto es, hemos asociado al nombre <strong><em>adelante</em></strong> un conjunto de órdenes que repetirá 512 veces el proceso de mover las cuatro bobinas de cada uno de los dos stepper. Pero no hemos dado la orden de ejecutar la función. Vamos a resolver esto. Si te fijas, ahora, en el bloque <strong>Funciones</strong> aparece una nueva pieza, <strong><em>adelante</em></strong>, que puedes ir arrastrando al escritorio principal de la aplicación. Para que veas cómo funciona, vamos a crear el siguiente programa: 
 <img alt="Mi primer programa con funciones" src="../img/funciones3.png" /><br />
-Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 72 mm de diámetro, aproximadamente de 3,14*72=226,19 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web.  </p>
+Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 80 mm de diámetro, aproximadamente de 3,14*80=251,33 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web. 
+En otro orden de cosas, el diámetro que estamos tomando como referencia puede variar ligeramente, dependiendo del grosor de las juntas tóricas que estemos usando cubiertas de las ruedas. Las ruedas de plástico tienen 72 mm de diámetro, a lo que habría que añadir el diámetro de las juntas utilizadas menos un par de mm para compensar. Si quieres un consejo (no tienes por qué), mide tú directamente las ruedas de tu Rupertobot.  </p>
 <h2 id="programa-tu-arduino">Programa tu Arduino</h2>
 <p>Si quieres ver cómo quedaría la función <strong><em>adelante</em></strong> en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría tres veces, tal y como especificábamos en el primer ejemplo:</p>
 <pre><code class="language-json">void adelante() {
@@ -262,6 +267,8 @@ delay(3000);
 while(true);
 }
 </code></pre>
+<h2 id="bueno-vamos-avanzando">¡Bueno! Vamos avanzando...</h2>
+<p>Si has pillado la tónica general del asunto (estoy seguro de que sí), sólo tendrías que repetir el proceso para generar las funciones <strong><em>atras</em></strong>, <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>. De todos modos, en el último punto te dejo todo listo para descargar y que tú te limites a aprender experimentando con ello. ¡Disfrútalo!. </p>
 <h2 id="descarga-los-programas">Descarga los programas</h2>
 <p><a href="../programas/funcionessinParametros.bloc">Ejemplo de funciones adelante, atrás, izquierda y derecha para MasayloBlockly</a><br />
 <a href="../programas/funcionessinParametros.ino">Ejemplo de funciones adelante, atrás, izquierda y derecha para la IDE de Arduino</a> </p></div>

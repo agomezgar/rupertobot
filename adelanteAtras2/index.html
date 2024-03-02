@@ -151,15 +151,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#como-simplificar-la-programacion-con-funciones" class="nav-link">¿Cómo simplificar la programación? ¡Con funciones!</a>
+            <li class="nav-item" data-level="2"><a href="#uso-de-funciones-con-argumentos" class="nav-link">Uso de funciones con argumentos</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#configurar-masayloblockly" class="nav-link">Configurar MasayloBlockly</a>
+            <li class="nav-item" data-level="2"><a href="#modificamos-el-resto-de-funciones" class="nav-link">Modificamos el resto de funciones</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#mi-primera-funcion" class="nav-link">Mi primera función</a>
+            <li class="nav-item" data-level="2"><a href="#programa-de-prueba" class="nav-link">Programa de prueba</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -180,31 +180,38 @@
 
 <h1 id="funciones-ii">Funciones (II)</h1>
 <h2 id="introduccion">Introducción</h2>
-<p>Si has leído la sección anterior (es lo que uno supondría más lógico, pero cuando hablamos de estudiantes de Educación Secundaria, nunca desecho ninguna hipótesis), habrás aprendido a crear funciones de modo que puedes repetir el código varias veces, tantas como te limites a llamar a cada función por su nombre. No obstante, también hemos explicado que con ese enfoque, cada vez que llamemos a la función <strong><em>adelante</em></strong>, por ejemplo, Rupertobot siempre avanzará exactamente la misma distancia: 3,14 multiplicado por 72, es decir, 226,19 mm (más o menos). Esto es así porque tal y como hemos construido la función, ésta siempre se va a ejecutar exactamente del mismo modo, tal y como la hemos escrito. Lo ideal, ahora, sería que pudiéramos introducir un valor que permitiera a <strong><em>adelante</em></strong> repetir el bucle de su interior un número de veces variable, según la distancia que queramos avanzar. Para ello, pasamos a explicar cómo usar parámetros con nuestras funciones.  </p>
+<p>Si has leído la sección anterior (es lo que uno supondría más lógico, pero cuando hablamos de estudiantes de Educación Secundaria, nunca desecho ninguna hipótesis), habrás aprendido a crear funciones de modo que puedes repetir el código varias veces, tantas como te limites a llamar a cada función por su nombre. No obstante, también hemos explicado que con ese enfoque, cada vez que llamemos a la función <strong><em>adelante</em></strong>, por ejemplo, Rupertobot siempre avanzará exactamente la misma distancia: 3,14 multiplicado por 80, es decir, 251,33 mm (más o menos). Esto es así porque tal y como hemos construido la función, ésta siempre se va a ejecutar exactamente del mismo modo, tal y como la hemos escrito. Lo ideal, ahora, sería que pudiéramos introducir un valor que permitiera a <strong><em>adelante</em></strong> repetir el bucle de su interior un número de veces variable, según la distancia que queramos avanzar. Para ello, pasamos a explicar cómo usar parámetros con nuestras funciones.  </p>
 <h2 id="justificacion-matematica">Justificación matemática</h2>
-<p>Lo que queremos hacer es usar funciones paramétricas en las que indiquemos en los casos de <strong><em>adelante</em></strong> y <strong><em>atras</em></strong>, cuántos centímetros queremos movernos, y en el de <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>, cuántos grados queremos girar. Tiremos, entonces, de nuestros conocimientos de geometría:<br />
-La función <strong><em>adelante</em></strong> original genera un total de 2048 pasos hacia adelante, lo que corresponde a una revolución completa en ambas ruedas del Rupertobot. Como el diámetro de dichas ruedas es alrededor de unos 72 mm (puede subir hasta 75 o incluso un poco más, según el grosor de las juntas tóricas), conociendo la fórmula de la longitud de una circunferencia, sabemos que eso equivaldría a un avance de 226.19 mm, o mejor, 22.619 cm. Quédate con el dato: 2048 pasos-&gt;22.62 cm.<br />
-Lo que resta es una regla de tres (que me perdonen los profes de Matemáticas, sé que esto no está bien visto) sencilla: Si 22,62 cm exigen 2048 pasos, entonces avanzar 1 cm exigirá 2048/22.619=90.5415 pasos. Ten en cuenta que el algoritmo inicial de <strong><em>adelante</em></strong> aplica 4 pasos a cada repetición, así que 90,5415/4=22.6354. Ése es el número de veces que tenemos que repetir este proceso por cada cm que queremos avanzar.<br />
-Por otro lado, si has probado la función <strong><em>izquierda</em></strong> o <strong><em>derecha</em></strong>, verás que como hacen avanzar una revolución completa a cada rueda (2048 pasos), haremos que el robot gire sobre su eje 180º. ¿Cuántos pasos necesito avanzar por grado sexagesimal, entonces?. La aritmética es sencilla, de nuevo. La función original, que da 2048 pasos, implica un giro de 180º. Así que un sólo grado corresponderá a 2048/180=11.3778 pasos. Teniendo en cuenta que las funciones originales implican 4 pasos por repetición, el algoritmo original debería repetirse 2.8444 veces por grado sexagesimal. Quédate, pues, con esos dos números: <strong>22.634</strong> y <strong>2.8444</strong>  </p>
-<p><img alt="Movimiento hacia adelante controlado mediante bucles" src="../img/primerAdelanteControlado.png" /><br />
-¿Qué es lo que he hecho? He usado un bucle. Como hemos dicho antes, tomaremos como referencia el hecho de que los steppers de nuestro Rupertobot necesitan 2048 pasos para dar una vuelta completa. Si te fijas bien en el primer ejemplo para mover el robot adelante, hay que explicar la secuencia de los 4 pasos al microcontrolador. Por lo tanto, si ese programa estipula 4 pasos, y quiero que de 2048 antes de pararse, pues como 2048/4=512, el bucle deberá repetirse 512 veces.  </p>
-<h2 id="como-simplificar-la-programacion-con-funciones">¿Cómo simplificar la programación? ¡Con funciones!</h2>
-<p>Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: <strong>Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros</strong>. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo explicando con ejemplos:  </p>
-<h2 id="configurar-masayloblockly">Configurar MasayloBlockly</h2>
-<p>Si vas a utilizar el programa MasayloBlockly que desarrollamos desde el IES Maestro Juan de Ávila (es algo artesanal, pero en clase nos está resultando muy útil), debes saber que por motivos de espacio, no suelen aparecer en el menú de bloques de la izquierda todas las opciones. Si quieres algún elemento (como es este caso) que no te aparezca, debes pinchar en el símbolo del engranaje (<strong>Preferencias</strong>), seleccionar la opción <strong>Nivel experto</strong>, y dentro del abanico de posibilidades, elige <strong>Funciones</strong>. Asegúrate también de dejar marcada la opción <strong>Entrada/Salida</strong>, que es la que te permite ir escribiendo unos y ceros en los pines de Arduino
-<img alt="Configurar MasayloBlockly" src="../img/configuracionMasaylo.png" />  </p>
-<h2 id="mi-primera-funcion">Mi primera función</h2>
-<p>Para empezar, vamos a crear una función muy simplificada, sin parámetros, que llamaremos simplemente <em>adelante</em>. Esta función se encargará de lo mismo que hemos hecho antes, es decir, impulsar al Rupertobot hacia adelante hasta que ambas ruedas den una revolución completa. Para ello, elige el bloque <strong>Funciones</strong>, y selecciona la primera pieza de puzzle, <em>Hacer</em>:<br />
-<img alt="Seleccionar función simple" src="../img/funciones1.png" /><br />
-Del programa anterior, quita la pieza <em>Fin</em> (no queremos interrumpir el programa definitivamente), y arrastra el resto dentro de la pieza <em>Hacer</em> (cambia el nombre <strong>hacer</strong> por <strong>adelante</strong>):<br />
-<img alt="Función adelante simplificada" src="../img/funciones2.png" /><br />
-Si volcaras el programa en el Rupertobot, verías que no hace nada aún. Se queda quieto. Parado. Como muerto. Qué penita da, ¿verdad?. Eso es porque hemos definido una función, pero no la hemos ejecutado aún. Esto es, hemos asociado al nombre <strong><em>adelante</em></strong> un conjunto de órdenes que repetirá 512 veces el proceso de mover las cuatro bobinas de cada uno de los dos stepper. Pero no hemos dado la orden de ejecutar la función. Vamos a resolver esto. Si te fijas, ahora, en el bloque <strong>Funciones</strong> aparece una nueva pieza, <strong><em>adelante</em></strong>, que puedes ir arrastrando al escritorio principal de la aplicación. Para que veas cómo funciona, vamos a crear el siguiente programa: 
-<img alt="Mi primer programa con funciones" src="../img/funciones3.png" /><br />
-Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 72 mm de diámetro, aproximadamente de 3,14*72=226,19 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web.  </p>
+<p>Lo que queremos hacer es usar funciones paramétricas en las que indiquemos en los casos de <strong><em>adelante</em></strong> y <strong><em>atras</em></strong>, cuántos centímetros queremos movernos, y en el de <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>, cuántos grados queremos girar. Tiremos, entonces, de nuestros conocimientos de geometría: </p>
+<p>La función <strong><em>adelante</em></strong> original genera un total de 2048 pasos hacia adelante, lo que corresponde a una revolución completa en ambas ruedas del Rupertobot. Como el diámetro de dichas ruedas es alrededor de unos 80 mm (ya te he dicho que este dato varía según el grosor de las juntas tóricas), conociendo la fórmula de la longitud de una circunferencia, sabemos que eso equivaldría a un avance de 251,33 mm, o mejor, 25,13 cm. Quédate con el dato: 2048 pasos-&gt;25,13 cm. </p>
+<p>Lo que resta es una regla de tres (que me perdonen los profes de Matemáticas, sé que esto no está bien visto) sencilla: Si 25,13 cm exigen 2048 pasos, entonces avanzar 1 cm exigirá 2048/25,13=81,4873 pasos. Ten en cuenta que el algoritmo inicial de <strong><em>adelante</em></strong> aplica 4 pasos a cada repetición, así que 81,4873/4=20,3718. Ése es el número de veces que tenemos que repetir este proceso por cada cm que queremos avanzar.  </p>
+<p><em>Nota para tiquismiquis: si estás comprobando mi explicación calculadora en mano, puede que te baile algún número a la altura de milésimas o diezmilésimas, no lo estoy comprobando. Los números que manejo los saco de mi propia calculadora sin usar redondeos. Si quieres cambiar algo, eres muy libre, es tu robot</em>. </p>
+<p>Por otro lado, si has probado la función <strong><em>izquierda</em></strong> o <strong><em>derecha</em></strong>, verás que como hacen avanzar una revolución completa a cada rueda (2048 pasos), haremos que el robot gire sobre su eje 180º. ¿Cuántos pasos necesito avanzar por grado sexagesimal, entonces?. La aritmética es sencilla, de nuevo. La función original, que da 2048 pasos, implica un giro de 180º. Así que un sólo grado corresponderá a 2048/180=11,3778 pasos. Teniendo en cuenta que las funciones originales implican 4 pasos por repetición, el algoritmo original debería repetirse 2.8444 veces por grado sexagesimal. Quédate, pues, con esos dos números: <strong>20,3718</strong> y <strong>2,8444</strong>  </p>
+<p>Lo que vamos a hacer a continuación es modificar nuestras funciones para que acepten parámetros. Si has entendido el concepto de que una función es un grupo de órdenes asociadas a un nombre (por ejemplo, <strong><em>adelante</em></strong>) que se ejecutan en orden cuando se llama a dicho nombre, entenderás ahora que las funciones pueden trabajar con parámetros. Un parámetro, o argumento, es un dato (de cualquier tipo, número entero, decimal, lógico... incluso se aceptan caracteres) que puedo dar yo a la función para que lo utilice de algún modo (<em>parámetros/argumentos de entrada</em>) o que puedo pedir a la función que me devuelva después de ejecutarse, como consecuencia de algún cálculo (<em>parámetros/argumentos de salida</em>). </p>
+<p>Lo sé, lo sé. Parece complicado. El movimiento se demuestra andando, así que vamos con ello.</p>
+<h2 id="uso-de-funciones-con-argumentos">Uso de funciones con argumentos</h2>
+<p>En este caso, vamos a trabajar con <em>argumentos de entrada</em>. Esto significa que cuando yo ejecute una función, primero tengo que proporcionarle un dato (en la función <strong><em>adelante</em></strong>, cuántos cm quiero que se mueva hacia adelante) y dicha función lo utilizará para que Rupertobot haga lo que yo quiero. </p>
+<p>¡Bueno!. Pues en MasayloBlockly, retoma las funciones del ejemplo anterior. Vamos a modificar la función <strong><em>adelante</em></strong> para que acepte argumentos. En la esquina superior izquierda del bloque que representa dicha función, verás un icono azul en forma de engranaje. Si pinchas ahí, te ofrecerá la posibilidad de usar variables (parámetros)</p>
+<p><img alt="Cómo introducir argumentos en una función" src="../img/introduzcoVariables1.png" /><br />
+Yo quiero introducir un argumento correspondiente a cuántos cm quiero que se mueva Rupertobot hacia adelante. Este número va a aceptar decimales, así que cambio la "x" que viene por defecto por el nombre "cm", y en el tipo, voy a especificar "decimal de punto flotante". Una vez lo haga, arrastra el bloque correspondiente a ese variable dentro del bloque "argumentos de entrada": 
+<img alt="Configurando el tipo de argumento dentro de una función" src="../img/introduzcoVariables2.png" /><br />
+Vuelve a pinchar en el engranaje, para que desaparezca el recuadro de configuración y te deje más espacio en la pantalla. Si ahora buscas la función <strong><em>adelante</em></strong>, verás que el bloque ha cambiado ligeramente: ahora la pieza de puzzle acepta un bloque lateral, que será un número del bloque <strong>Matemáticas</strong> correspondiente al número de cm que quiero avanzar. </p>
+<p><img alt="Ahora mi función acepta un argumento de entrada" src="../img/introduzcoVariables3.png" />  </p>
+<p>¡Pero ojo!. Aún no hemos terminado. Ya he preparado mi función para que acepte argumentos, pero ¿cómo la modifico para que realmente mi Rupertobot se mueva la distancia especificada?. Sencillo (para mí, claro, que soy más viejo que un bosque y llevo meses trabajando en el Ruperti; pero tú también lo vas a entender enseguida). En el bloque <em>Repetir</em>, que originalmente incluía el número <em>512 veces</em>, vamos a introducir un bloque de <em>Matemáticas</em> correspondiente a operaciones (inicialmente lleva el signo <em>+</em>, pero sustitúyelo por una multiplicación). En dicho bloque multiplicaremos, por un lado, la variable que hemos creado, <em>cm</em> (está disponible en el bloque <em>Variables</em>; si no lo encuentras, vuelve a la configuración de MasayloBlockly y actívalo desde el nivel <em>Experto</em>), y por otro lado, el número 20,3718.
+<img alt="Preparando el bloque que utilizará el argumento *cm*" src="../img/introduzcoVariables4.png" /><br />
+Sólo te queda poner el bloque que has creado en lugar del número original, <em>512</em>. Ahora vamos a usar la función modificada para hacer que Rupertobot avance 15 cm (la función acepta también números enteros): 
+<img alt="Programo a Rupertobot para que avance 15 cm" src="../img/introduzcoVariables5.png" /><br />
+Vuelca el programa en tu robot y, regla en mano, comprueba la distancia que realmente se mueve. Si no te acaba de convencer el resultado, recalcula tú y sustituye el número <em>20,3718</em>. Pero yo creo que encontrarás más que aceptable el movimiento final.</p>
+<h2 id="modificamos-el-resto-de-funciones">Modificamos el resto de funciones</h2>
+<p>Lo que queda por hacer es sencillo. Repite el proceso con <strong><em>atras</em></strong>, <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>. <strong><em>atras</em></strong> puede (y debería) utilizar la misma variable, <em>cm</em>, así como el número <strong>20,7318</strong>. En cuanto a <strong><em>izquierda</em></strong> y <strong><em>derecha</em></strong>, deberías especificar el argumento <em>grados</em>, también de tipo decimal de coma flotante, y recordando que el número ahora sería <strong>2,8444</strong>. 
+<img alt="En las funciones de giro utilizaremos la variable *grados*" src="../img/introduzcoVariables6.png" />  </p>
+<h2 id="programa-de-prueba">Programa de prueba</h2>
+<p>Haz algún programa que te permita comprobar si las funciones trabajan como deberían. Yo te propongo este, por ejemplo. Al acabar, el robot debería acabar exactamente en la misma posición que ha empezado: </p>
+<p><img alt="Probando las funciones con argumentos" src="../img/introduzcoVariables7.png" />  </p>
 <h2 id="programa-tu-arduino">Programa tu Arduino</h2>
-<p>Si quieres ver cómo quedaría la función <strong><em>adelante</em></strong> en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría tres veces, tal y como especificábamos en el primer ejemplo:</p>
-<pre><code class="language-json">void adelante() {
-  for (int count=0 ; count&lt;512 ; count++) {
+<p>Si quieres ver cómo quedaría la nueva función <strong><em>adelante</em></strong> en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría para avanzar 15 cm, tal y como especificábamos en uno de los ejemplos anteriores (si quieres el resto de funciones, más abajo puedes descargarlas):</p>
+<pre><code class="language-json">void adelante(float cm) {
+  for (int count=0 ; count&lt;cm * 20.3718 ; count++) {
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
@@ -244,6 +251,7 @@ Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en
   }
 }
 
+
 void setup() {
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
@@ -255,19 +263,14 @@ void setup() {
   pinMode(9, OUTPUT);
 }
 
-void loop(){
-adelante();
-delay(3000);
-adelante();
-delay(3000);
-adelante();
-delay(3000);
-while(true);
+void loop() {
+  adelante(15);
+  while(true);
 }
 </code></pre>
 <h2 id="descarga-los-programas">Descarga los programas</h2>
-<p><a href="../programas/funcionessinParametros.bloc">Ejemplo de funciones adelante, atrás, izquierda y derecha para MasayloBlockly</a><br />
-<a href="../programas/funcionessinParametros.ino">Ejemplo de funciones adelante, atrás, izquierda y derecha para la IDE de Arduino</a> </p></div>
+<p><a href="../programas/funcionesconParametros.bloc">Ejemplo de las funciones con argumentos adelante, atrás, izquierda y derecha para MasayloBlockly</a><br />
+<a href="../programas/funcionesconParametros.ino">Ejemplo de las funciones con argumentos adelante, atrás, izquierda y derecha para la IDE de Arduino</a> </p></div>
             </div>
         </div>
 
