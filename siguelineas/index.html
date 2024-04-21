@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Rupertobot como siguelíneas - Rupertobot</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Rupertobot</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Introducción</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">¿Quién soy?</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archivos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../cad/archivosCAD/" class="dropdown-item">Archivos en FreeCAD (modificables)</a>
+</li>
+                                    
+<li>
+    <a href="../STL/archivosSTL/" class="dropdown-item">Archivos STL (para imprimir en 3D)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../montaje/" class="nav-link">Instrucciones de montaje</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conexionado <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../alimentacion/" class="dropdown-item">Alimentación</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoStepper/" class="dropdown-item">Motores paso a paso (stepper)</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoSensores/" class="dropdown-item">Sensores US e IR</a>
+</li>
+                                    
+<li>
+    <a href="../conexionadoZumbador/" class="dropdown-item">Zumbador</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ejemplos de programación <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../movimiento/" class="dropdown-item">Mover una rueda</a>
+</li>
+                                    
+<li>
+    <a href="../adelante/" class="dropdown-item">Hacia adelante</a>
+</li>
+                                    
+<li>
+    <a href="../atras/" class="dropdown-item">Hacia atras</a>
+</li>
+                                    
+<li>
+    <a href="../izquierdaDerecha/" class="dropdown-item">Cómo girar</a>
+</li>
+                                    
+<li>
+    <a href="../adelanteAtras/" class="dropdown-item">Uso de funciones(I)</a>
+</li>
+                                    
+<li>
+    <a href="../adelanteAtras2/" class="dropdown-item">Uso de funciones(II)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Rupertobot como siguelíneas</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../adelanteAtras2/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#siguelineas" class="nav-link">Siguelíneas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#principio-de-funcionamiento" class="nav-link">Principio de funcionamiento</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-en-masayloblockly" class="nav-link">Programa en MasayloBlockly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programa-en-arduino" class="nav-link">Programa en Arduino</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descarga-los-programas-completos" class="nav-link">Descarga los programas completos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#imprime-tu-circuito-de-prueba" class="nav-link">Imprime tu circuito de prueba</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="siguelineas">Siguelíneas</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Una de las posibilidades más atractivas para un robot educativo como el Rupertobot es programarlo como un siguelíneas. Nuestro ruperti cuenta con dos sensores de infrarrojos (sensores IR, para abreviar) conectados en las patillas A0 el derecho, o número 14 si lo tratamos como un pin digital, y A1 (pin digital 15) el izquierdo. Por supuesto, estoy insistiendo mucho en todos estos textos en que tú puedes elegir a qué patillas de tu Arduino conectar cada elemento que quieras incorporar a tu robot, pero te recuerdo que todos los ejemplos de programación que publico por aquí responden a esta organización del conexionado. El caso es que estos sensores, aparte de poder usarlos como sensores de obstáculos, están principalmente orientados a discernir si se encuentran ante una superficie oscura o una superficie clara.</p>
+<p>El principio de un robot siguelíneas es que va avanzando sobre una superficie blanca sobre la que hay un camino de color negro. Aquí te dejo un vídeo de ejemplo (no es Rupertobot, sino su primo <a href="https://clubroboticagranada.github.io/MASAYLO-CRG/">Masaylo</a>)  </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OOMNFTb0iPA?si=rFIaM7ir2JTidD3J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>Los sensores IR que estamos utilizando dan un "1" lógico cuando están frente a una superficie clara y un "0" cuando "pisan" el color negro.</p>
+<h2 id="principio-de-funcionamiento">Principio de funcionamiento</h2>
+<p>Como ya te he comentado, la clave de este tipo de desafíos radica en los sensores IR, dispuestos a izquierda y a derecha del robot, a suficiente distancia entre ellos para abarcar la superficie blanca del circuito sin llegar a tocar la pista negra, a menos que se desvíe a la izquierda o hacia la derecha.<br />
+El principio general del programa es: si pisas blanco a derecha y a izquierda, vas bien. Sigue hacia adelante:<br />
+<img src="../img/siguelineasAdelante.png" width="500"><br />
+Si, en cambio, nos desviamos por la derecha, el sensor IR de la izquierda (el 15), detectará un color negro. Es hora de girar un poquito A LA IZQUIERDA para retomar nuestro camino.<br />
+<img src="../img/siguelineasIzquierda.png" width="500"><br />
+Por último, el caso contrario: si es el sensor derecho el que detecta un "0" lógico ("Estoy pisando algo negro"), significa que nos estamos yendo por la izquierda. Hora es entonces de corregir el rumbo desviándonos hacia la derecha:<br />
+<img src="../img/siguelineasDerecha.png" width="500">  </p>
+<h2 id="programa-en-masayloblockly">Programa en MasayloBlockly</h2>
+<p>Partiremos de que ya tienes determinadas las funciones que definen los movimientos básicos del ruperti (lo tienes en los <a href="../adelanteAtras2/">Ejemplos de programación, donde te los puedes descargar</a>). Así no atiborraremos tu pantalla con demasiadas instrucciones, pero recuerda que tu programa ya tiene que tener incorporadas dichas funciones.<br />
+Vamos, pues, a definir una nueva función que llamaremos <strong>siguelineas</strong>, que tendrá en cuenta las tres posibilidades que hemos definido en el apartado anterior.<br />
+Como novedad, en esta ocasión tenemos que añadir un <em>operador lógico</em>, que quizás desconozcas si te estás iniciando en el mundillo de la programación.<br />
+Un <em>operador lógico</em> es una herramienta que en programación se utiliza para realizar operaciones booleanas con valores y variables. Así podemos comparar dos o más situaciones de un modo lógico: saber si pasan dos cosas <strong><em>a la vez</em></strong>,o reaccionar si pasa <strong><em>una cosa o la otra</em></strong>, incluso puedo comprobar <strong><em>si pasa lo contrario a lo que yo tengo previsto</em></strong>. Como se dice, el movimiento se demuestra andando, así que si eres nueva o nuevo en estas lides, no te preocupes demasiado. Aprenderás con la práctica.<br />
+El caso es que en la función <strong>siguelineas</strong> vamos a ir comparando el valor detectado por cada sensor a la vez. Para ello, nos valdremos del operador lógico <em>y</em> o <em>and</em> (en programación se suele representar como <em>&amp;&amp;</em>), por que necesitamos saber simultáneamente qué detecta cada IR.<br />
+<center> <strong>FUNCIÓN SIGUELÍNEAS</strong> </center>  </p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>DERECHA</strong></td>
+<td align="center"><strong>IZQUIERDA</strong></td>
+<td align="center"><strong>RESULTADO</strong></td>
+</tr>
+<tr>
+<td align="center">BLANCO</td>
+<td align="center">BLANCO</td>
+<td align="center">ADELANTE</td>
+</tr>
+<tr>
+<td align="center">BLANCO</td>
+<td align="center">NEGRO</td>
+<td align="center">IZQUIERDA</td>
+</tr>
+<tr>
+<td align="center">NEGRO</td>
+<td align="center">BLANCO</td>
+<td align="center">DERECHA</td>
+</tr>
+</tbody>
+</table>
+<p>¡Bueno!. Pues vamos al lío. En MasayloBlockly, los operadores lógicos están en el bloque de comandos <strong>lógica</strong> (ya ves tú qué original).<br />
+<img src="../img/operadorLogicoY.png" width="300"><br />
+La función <strong>siguelineas</strong>, pues, tendrá esta pinta:<br />
+<img src="../img/funcionSiguelineas.png" width="800"><br />
+Como te explicaba en los ejemplos de <a href="../adelanteAtras/">Uso de funciones</a>, esta función por sí sola no hace nada hasta que no la llamas en tu programa principal. Una vez creada, puedes llamarla en tu programa, e incluso combinarla con otras funciones (por ejemplo, puedes incluir el uso del sensor US para que detecte obstáculos, en cuyo caso el robot se pararía en mitad del circuito).<br />
+Por otro lado, observarás que el comportamiento de tu ruperti variará según los cm que quieres que avance cuando va hacia adelante y del ángulo de desviación que elijas para los giros. Según el tamaño del valor, tu robot será más veloz o más preciso. En tus manos está ir experimentando con esos números.<br />
+Una última apreciación: observarás que no he consignado ninguna respuesta si los sensores derecho e izquierdo detectan A LA VEZ un negro. En un circuito sencillo, esto no tendría que pasar nunca, porque no hay bifurcaciones. Si en algún momento sucede, como no está previsto, tu robot simplemente se parará. En casos más complejos, como es el de las bifurcaciones (el camino toma dos ramales), pues tendrás que perfeccionar tu programa, claro. Yo suelo sugerir el uso de variables que lleven la cuenta de cuántas veces me hallo en una bifurcación para que mi ruperti vaya a la derecha o a la izquierda, pero eso ya excede el objetivo de esta humilde web.  </p>
+<h2 id="programa-en-arduino">Programa en Arduino</h2>
+<p>Como en otras ocasiones, si tienes cierto manejo en C++ (el lenguaje del IDE de Arduino), te proporciono, no el programa completo, por no ser redundante, pero sí el código correspondiente a la función <strong>siguelineas</strong>:  </p>
+<pre><code class="language-json">void siguelineas() {
+  if (digitalRead(14) == HIGH &amp; digitalRead(15) == HIGH) {
+    adelante(1);
+  }
+  if (digitalRead(14) == HIGH &amp; digitalRead(15) == LOW) {
+    izquierda(15);
+  }
+  if (digitalRead(14) == LOW &amp; digitalRead(15) == HIGH) {
+    derecha(15);
+  }
+}
+
+</code></pre>
+<h2 id="descarga-los-programas-completos">Descarga los programas completos</h2>
+<p><a href="../programas/funcionesconParametrosySiguelineas.bloc">Programa básico de siguelíneas para MasayloBlockly</a><br />
+<a href="../programas/funcionesconParametrosySiguelineas.ino">Programa básico de siguelíneas para la IDE de Arduino</a> </p>
+<h2 id="imprime-tu-circuito-de-prueba">Imprime tu circuito de prueba</h2>
+<p>Como no me ha resultado fácil encontrar circuitos simples en Internet para esta práctica, he creado el mío propio, un pdf que puedes descargar libremente (soy así de generoso) e imprimir. Está en tamaño A0, así que tenlo en cuenta si vas a reducirlo, porque el grosor de la línea negra se reducirá también. Haz click en la imagen para descargarlo. Que la fuerza te acompañe.<br />
+<a href="../archivos/circuito.pdf"><img src="../img/circuitoSiguelineas.png" width="500"></a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
