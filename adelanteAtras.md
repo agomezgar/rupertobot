@@ -6,7 +6,7 @@ Para empezar, si yo quisiera que mi Rupertobot fuera hacia adelante durante un t
 ![Movimiento hacia adelante controlado mediante bucles](./img/primerAdelanteControlado.png)  
 ¿Qué es lo que he hecho? He usado un bucle. Como hemos dicho antes, tomaremos como referencia el hecho de que los steppers de nuestro Rupertobot necesitan 2048 pasos para dar una vuelta completa. Si te fijas bien en el primer ejemplo para mover el robot adelante, hay que explicar la secuencia de los 4 pasos al microcontrolador. Por lo tanto, si ese programa estipula 4 pasos, y quiero que de 2048 antes de pararse, pues como 2048/4=512, el bucle deberá repetirse 512 veces.  
 ## ¿Cómo simplificar la programación? ¡Con funciones!  
-Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: **Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros**. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo ilustrando con ejemplos:  
+Bueno, sí... Parece muy largo. La secuencia completa que hemos sugerido en el apartado anterior exigiría un programa cuatro veces más largo que el de la imagen. Así que vamos a explicarte qué es una función: **Una función es un conjunto de órdenes asociadas a un nombre que puede aceptar o proporcionar parámetros**. ¿Cómo?. ¿Que no te has enterado?. Lo confieso, yo tampoco. Vamos a intentar irlo explicando con ejemplos:  
 ## Configurar MasayloBlockly  
 Si vas a utilizar el programa MasayloBlockly que desarrollamos desde el IES Maestro Juan de Ávila (es algo artesanal, pero en clase nos está resultando muy útil), debes saber que por motivos de espacio, no suelen aparecer en el menú de bloques de la izquierda todas las opciones. Si quieres algún elemento (como es este caso) que no te aparezca, debes pinchar en el símbolo del engranaje (**Preferencias**), seleccionar la opción **Nivel experto**, y dentro del abanico de posibilidades, elige **Funciones**. Asegúrate también de dejar marcada la opción **Entrada/Salida**, que es la que te permite ir escribiendo unos y ceros en los pines de Arduino
 ![Configurar MasayloBlockly](./img/configuracionMasaylo.png)  
@@ -17,7 +17,8 @@ Del programa anterior, quita la pieza *Fin* (no queremos interrumpir el programa
 ![Función adelante simplificada](./img/funciones2.png)  
 Si volcaras el programa en el Rupertobot, verías que no hace nada aún. Se queda quieto. Parado. Como muerto. Qué penita da, ¿verdad?. Eso es porque hemos definido una función, pero no la hemos ejecutado aún. Esto es, hemos asociado al nombre ***adelante*** un conjunto de órdenes que repetirá 512 veces el proceso de mover las cuatro bobinas de cada uno de los dos stepper. Pero no hemos dado la orden de ejecutar la función. Vamos a resolver esto. Si te fijas, ahora, en el bloque **Funciones** aparece una nueva pieza, ***adelante***, que puedes ir arrastrando al escritorio principal de la aplicación. Para que veas cómo funciona, vamos a crear el siguiente programa: 
 ![Mi primer programa con funciones](./img/funciones3.png)  
-Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 72 mm de diámetro, aproximadamente de 3,14*72=226,19 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web.  
+Si lo has hecho correctamente, verás que ahora el Rupertobot avanza 3 veces, en una secuencia espaciada cada 3 segundos, una distancia correspondiente a una revolución completa de cada rueda, esto es, para una rueda de unos 80 mm de diámetro, aproximadamente de 3,14*80=251,33 mm. Por supuesto, la idea es que podamos especificar la distancia que queremos que haga o incluso el ángulo que queremos de giro, pero esto será objeto de otra sección en esta web. 
+En otro orden de cosas, el diámetro que estamos tomando como referencia puede variar ligeramente, dependiendo del grosor de las juntas tóricas que estemos usando cubiertas de las ruedas. Las ruedas de plástico tienen 72 mm de diámetro, a lo que habría que añadir el diámetro de las juntas utilizadas menos un par de mm para compensar. Si quieres un consejo (no tienes por qué), mide tú directamente las ruedas de tu Rupertobot.  
 ## Programa tu Arduino  
 Si quieres ver cómo quedaría la función ***adelante*** en la IDE de Arduino, te dejo el código en C++ con esta función y cómo se ejecutaría tres veces, tal y como especificábamos en el primer ejemplo:
 ```json
@@ -83,6 +84,9 @@ delay(3000);
 while(true);
 }
 ```  
+## ¡Bueno! Vamos avanzando...
+Si has pillado la tónica general del asunto (estoy seguro de que sí), sólo tendrías que repetir el proceso para generar las funciones ***atras***, ***izquierda*** y ***derecha***. De todos modos, en el último punto te dejo todo listo para descargar y que tú te limites a aprender experimentando con ello. ¡Disfrútalo!. 
+
 ## Descarga los programas  
 [Ejemplo de funciones adelante, atrás, izquierda y derecha para MasayloBlockly](./programas/funcionessinParametros.bloc)  
 [Ejemplo de funciones adelante, atrás, izquierda y derecha para la IDE de Arduino](./programas/funcionessinParametros.ino) 
