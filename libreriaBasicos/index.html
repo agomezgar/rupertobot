@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Mover una rueda - Rupertobot</title>
+        <title>Conceptos básicos - Rupertobot</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -76,12 +76,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Ejemplos de programación <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Mover una rueda</a>
+    <a href="../movimiento/" class="dropdown-item">Mover una rueda</a>
 </li>
                                     
 <li>
@@ -114,12 +114,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Librería para Arduino <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../libreriaBasicos/" class="dropdown-item">Conceptos básicos</a>
+    <a href="./" class="dropdown-item active">Conceptos básicos</a>
 </li>
                                     
 <li>
@@ -136,12 +136,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../conexionadoZumbador/" class="nav-link">
+                                <a rel="prev" href="../siguelineas/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../adelante/" class="nav-link">
+                                <a rel="next" href="../libreriaSensores/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -163,25 +163,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#movimiento" class="nav-link">Movimiento</a>
+            <li class="nav-item" data-level="1"><a href="#libreria-para-arduino-conceptos-basicos" class="nav-link">Librería para Arduino: conceptos básicos</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#mover-una-rueda" class="nav-link">Mover una rueda</a>
+            <li class="nav-item" data-level="2"><a href="#declaracion-de-rupertobot" class="nav-link">Declaración de Rupertobot</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#programacion-mediante-masayloblockly" class="nav-link">Programación mediante MasayloBlockly</a>
+            <li class="nav-item" data-level="2"><a href="#movimientos-basicos" class="nav-link">Movimientos básicos</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#programa-tu-arduino" class="nav-link">Programa tu Arduino</a>
+            <li class="nav-item" data-level="2"><a href="#ejemplo-de-uso" class="nav-link">Ejemplo de uso</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#descarga-el-programa" class="nav-link">Descarga el programa</a>
+            <li class="nav-item" data-level="2"><a href="#descarga-los-programas" class="nav-link">Descarga los programas</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -192,55 +192,153 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="movimiento">Movimiento</h1>
+<h1 id="libreria-para-arduino-conceptos-basicos">Librería para Arduino: conceptos básicos</h1>
 <h2 id="introduccion">Introducción</h2>
-<p>En esta sección vamos a asegurar lo que sabemos sobre el funcionamiento de un motor de tipo paso a paso y aprenderemos a programar a nuestro Rupertobot para que pueda avanzar, retroceder y girar.  </p>
-<h2 id="mover-una-rueda">Mover una rueda</h2>
-<p>Como te explicaba en el apartado de <a href="../conexionadoStepper/">conexionado de estos motores</a>, su principio de funcionamiento reside en que cuenta con cuatro bobinas que debemos ir excitando (esto es, proporcionarle tensión mediante un "1" lógico) en el orden adecuado. Para nuestro primer ejemplo, elegiremos la rueda derecha del Rupertobot, que está controlada por los pines 2, 3, 4 y 5 de nuestra Arduino. Ésta debería ser la secuencia lógica de control:<br />
-<img alt="Secuencia de paso completo" src="../img/secuenciaPasoCompleto.png" /><br />
-Aunque existen otros modos más eficientes de mover nuestro motor, este es el más sencillo: excitar una bobina a la vez. Se conoce como el <strong>modo de paso completo</strong> de funcionamiento de un Stepper. Veamos cómo programarlo en MasayloBlockly...  </p>
-<h2 id="programacion-mediante-masayloblockly">Programación mediante MasayloBlockly</h2>
-<p>En el <strong>modo primerizo</strong> de MasayloBlockly, sólo necesitaremos los grupos de piezas <strong>Arduino</strong> y <strong>Tiempo</strong>. Tal como hemos especificado en el gráfico anterior, la idea es ir excitando una bobina cada vez, y dejar un tiempo mínimo (del orden de milisegundos) para permitir que se produzca el movimiento, tal que así:<br />
-<img alt="Movimiento derecha 1" src="../img/mueveDerecha1.png" /><br />
-Sencillo, ¿verdad?. Pues sólo tenemos que repetir el proceso tres veces más, para ir excitando una bobina a la vez, por orden. Al finalizar el programa, como ya imaginarás, vuelve a empezar. El resultado es un movimiento infinito de la rueda en sentido horario:<br />
-<img alt="Movimiento derecha completo" src="../img/mueveDerechaHorario.png" /><br />
-Ahora, dependiendo de lo rápido que quieras que vaya tu Rupertobot, sólo tienes que reducir el tiempo que esperas entre cada conmutación. Eso sí, debes dejar el tiempo mínimo para permitir el movimiento del eje. Por debajo de 2 milisegundos, ya te dará problemas. </p>
-<h2 id="programa-tu-arduino">Programa tu Arduino</h2>
-<p>Si prefieres tirar del IDE de Arduino, el código básico sería:  </p>
-<pre><code class="language-json">void setup() {
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
+<p>Bien. Si has venido a esta sección, habrá sido, o bien por error, o bien curioseando. O quizás tienes cierta experiencia en la programación con C++ (el lenguaje de programación que utiliza la IDE de Arduino). No ignorarás, entonces, que dicha IDE te proporciona, en ocasiones, la oportunidad de instalar librerías o bibliotecas (<em>libraries</em>, en inglés) para añadir funcionalidades a los comandos básicos de lectura y escritura analógicas y digitales en los distintos pines de nuestra queridísima placa.<br />
+Pues bien, nuestro Rupertobot cuenta con su propia librería para que puedas programarlo y hacerlo funcionar fácilmente. Para ello, desde la IDE de Arduino, vete al menú Sketch-&gt;Incluir biblioteca-&gt;Gestionar bibliotecas:  </p>
+<p><img src="../img/arduinoIDEInstalarLibreria.png" width="500"><br />
+(Tampoco hace falta que te compliques tanto; si lo prefieres, puedes usar el icono de los libros que hay a la izquierda).  </p>
+<p>Usa el buscador con la palabra "rupertobot", y ¡tachááááán!:<br />
+<img src="../img/arduinoIDEInstalarRupertobot.png" width="500"><br />
+Le damos a <em>INSTALAR</em> y ¡hala!. ¡Ya puedes programar al ruperti como un profesional!. Deja primero que te de algunos conceptos básicos en el siguiente apartado...  </p>
+<h2 id="declaracion-de-rupertobot">Declaración de Rupertobot</h2>
+<p>Cuando estás utilizando una librería en Arduino, en primer lugar debes <strong>incluirla</strong> al principio de tu programa principal (antes de <em>setup()</em> y <em>loop()</em>):</p>
+<pre><code class="language-json">&lt;include #rupertobot.h&gt;
+</code></pre>
+<p>Esto indicará al compilador que debe tomar como referencia al archivo <em>rupertobot.h</em>, que contiene todos los comandos disponibles para este robot, y que apunta a su vez a <em>rupertobot.cpp</em>, que es el que desarrolla la programación de cada uno de dichos comandos. Tampoco te compliques demasiado, la cuestión es que lo tienes que hacer sí o sí.<br />
+A continuación, y como es usual en la Programación Orientada a Objetos (POO), debes declarar un objeto de clase <em>rupertobot</em> que responderá a un nombre concreto, que tienes que elegir. Yo, para estos ejemplos, usaré el nombre <strong><em>ruperti</em></strong>:</p>
+<pre><code class="language-json">rupertobot ruperti;
+</code></pre>
+<p>A partir de aquí, en el bucle <em>loop()</em> podrás consignar tu programa, que puede o no utilizar los sensores IR y US de nuestro robot, en cuyo caso tendrás que indicar su patillaje en <em>setup()</em>. ¡Empecemos con algo sencillo!.  </p>
+<h2 id="movimientos-basicos">Movimientos básicos</h2>
+<p>Hay dos conjuntos de órdenes para mover a Rupertobot, dependiendo de que queramos indicar la distancia objetivo en revoluciones (vueltas que dan las ruedas) o en cm o grados sexagesimales. Empezaremos explorando el conjunto de órdenes por revolución, pero antes aclaremos (por si eres muy novato en el lenguaje C++) algunos conceptos:<br />
+<strong>Tipos de valor (void, int, float)</strong>: En C++ hay que especificar el tipo de valor con el que estamos trabajando. <em>void</em> significa <em>vacío</em> (no hay que indicar valor), <em>float</em> significa <em>número decimal</em> e <em>int</em> quiere decir <em>número entero</em>.<br />
+Así, cuando queramos utilizar, por ejemplo, la función <strong>avanza</strong> (la primera en la próxima tabla), veremos que se nos explica como <strong>void avanza(float laps, int speed);</strong>. Esto quiere decir tres cosas:<br />
+- <em>void avanza</em> significa que no hay que esperar que <strong>avanza</strong> nos proporcione valor alguno. Este comando se ejecutará sin más y a continuación se pasará a la siguiente orden.<br />
+- <em>float laps</em> indica que tenemos que meter entre paréntesis un primer número, que puede ser decimal, referente al número de vueltas que queremos que Rupertobot de a sus ruedas.<br />
+- <em>int rpm</em> indica que el segundo número que hay que proporcionar a la función <strong>avanza</strong> es de tipo entero (sin decimales), indicando la velocidad en revoluciones por minuto (rpm).<br />
+Por lo tanto, si quisiéramos, por ejemplo, dar la orden a Rupertobot de que vaya hacia adelante dos vueltas y media a 10 rpm, habría que escribir en el sitio correspondiente en <em>loop()</em>:  </p>
+<pre><code class="language-json">ruperti.avanza(1.5,10);
+</code></pre>
+<p>Como puedes ver, la orden tiene que ir siempre precedida por el nombre que has usado para tu Rupertobot (ruperti, en este ejemplo), precedida por un punto.<br />
+Ahora sí, vamos a repasar los comandos de movimiento, empezando por los de revoluciones:  </p>
+<p align="center"><h3>MOVIMIENTOS POR REVOLUCIONES</h3></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>COMANDO</strong></td>
+<td><strong>DESCRIPCIÓN</strong></td>
+</tr>
+<tr>
+<td><strong>void avanza(float laps, int speed);</strong></td>
+<td><strong>Hacia adelante las vueltas indicadas, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void atras(float laps, int speed);</strong></td>
+<td><strong>Hacia atrás las vueltas indicadas, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void izquierda(float laps, int speed);</strong></td>
+<td><strong>Gira hacia la izquierda las vueltas indicadas, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void derecha(float laps, int speed);</strong></td>
+<td><strong>Gira hacia la derecha las vueltas indicadas, a la velocidad especificada en rpm</strong></td>
+</tr>
+</tbody>
+</table>
+<p align="center"><h3>MOVIMIENTOS POR cm Y GRADOS SEXAGESIMALES</h3></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>COMANDO</strong></td>
+<td><strong>DESCRIPCIÓN</strong></td>
+</tr>
+<tr>
+<td><strong>void avanzacm(float cm, int speed);</strong></td>
+<td><strong>Hacia adelante los centímetros indicados, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void atrascm(float cm, int speed);</strong></td>
+<td><strong>Hacia atrás los centímetros indicados, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void giraIzquierda(float grados, int speed);</strong></td>
+<td><strong>Gira hacia la izquierda los grados indicados, a la velocidad especificada en rpm</strong></td>
+</tr>
+<tr>
+<td><strong>void giraDerecha(float grados, int speed);</strong></td>
+<td><strong>Gira hacia la derecha los grados indicados, a la velocidad especificada en rpm</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ejemplo-de-uso">Ejemplo de uso</h2>
+<p>Vamos a utilizar lo aprendido en dos programas que van a hacer lo mismo: dibujar una T. Al final del programa, tu Rupertobot debería acabar exactamente en el punto en el que empezó, con la misma posición. ¡Veamos cómo se desarrollaría!:  </p>
+<pre><code class="language-json">#include &lt;rupertobot.h&gt;
+//Declaramos a nuestro robot como ruperti 
+rupertobot ruperti;
+
+void setup() {
+//Nada que especificar en setup
 }
 
 void loop() {
-  digitalWrite(2, HIGH);
-  digitalWrite(3, LOW);
-  digitalWrite(4, LOW);
-  digitalWrite(5, LOW);
-  delay(5);
-  digitalWrite(2, LOW);
-  digitalWrite(3, HIGH);
-  digitalWrite(4, LOW);
-  digitalWrite(5, LOW);
-  delay(5);
-  digitalWrite(2, LOW);
-  digitalWrite(3, LOW);
-  digitalWrite(4, HIGH);
-  digitalWrite(5, LOW);
-  delay(5);
-  digitalWrite(2, LOW);
-  digitalWrite(3, LOW);
-  digitalWrite(4, LOW);
-  digitalWrite(5, HIGH);
-  delay(5);
-
+//Avanzo, giro y retrocedo dibujando una T
+ruperto.avanza(2,10);
+ruperto.izquierda(0.5,10);
+ruperto.avanza(1,10);
+ruperto.derecha(1,10);
+ruperto.avanza(2,10);
+ruperto.atras(1,10);
+ruperto.derecha(0.5,10);
+ruperto.avanza(2,10);
+ruperto.izquierda(1,10);
+//Fin de programa
+while(1);
 }
 </code></pre>
-<h2 id="descarga-el-programa">Descarga el programa</h2>
-<p><a href="../programas/ruedaDerechaSHorario.bloc">Rueda derecha, sentido horario, programa para MasayloBlockly</a><br />
-<a href="../programas/ruedaDerechaSHorario.ino">Rueda derecha, sentido horario, programa para IDE de Arduino</a>  </p></div>
+<p>Con este programa, el rupertobot avanzaría por revoluciones de sus ruedas (unos 25 cm por revolución). El mismo programa, pero indicando distancias en cm, sería:  </p>
+<pre><code class="language-json">#include &lt;rupertobot.h&gt;
+//Declaramos a nuestro robot como ruperti 
+rupertobot ruperti;
+
+void setup() {
+//Nada que especificar en setup
+}
+
+void loop() {
+//Avanzo, giro y retrocedo dibujando una T
+ruperto.avanzacm(20,10);
+ruperto.giraIzquierda(90,10);
+ruperto.avanzacm(10,10);
+ruperto.giraDerecha(180,10);
+ruperto.avanzacm(20,10);
+ruperto.atrascm(10,10);
+ruperto.giraDerecha(90,10);
+ruperto.avanzacm(20,10);
+ruperto.giraIzquierda(180,10);
+//Fin de programa
+while(1);
+}
+</code></pre>
+<p>Éste es, a grandes rasgos, el conjunto de órdenes que atañe a los movimientos del Rupertobot. En otra sección, hablaremos de sensores y actuadores.  </p>
+<h2 id="descarga-los-programas">Descarga los programas</h2>
+<p><a href="../programas/ejemploLibreriaMovimientos1.ino">Ejemplo de programa utilizando la librería Rupertobot para moverlo por revoluciones</a><br />
+<a href="../programas/ejemploLibreriaMovimientos2.ino">Ejemplo de programa utilizando la librería Rupertobot para moverlo por centímetros y grados sexagesimales</a>  </p></div>
             </div>
         </div>
 
